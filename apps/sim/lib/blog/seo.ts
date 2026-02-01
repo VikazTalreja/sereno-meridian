@@ -13,7 +13,7 @@ export function buildPostMetadata(post: BlogMeta): Metadata {
       url: a.url,
     })),
     creator: post.author.name,
-    publisher: 'Sim',
+    publisher: 'Sereno Meridian',
     robots: post.draft
       ? { index: false, follow: false, googleBot: { index: false, follow: false } }
       : { index: true, follow: true, googleBot: { index: true, follow: true } },
@@ -22,7 +22,7 @@ export function buildPostMetadata(post: BlogMeta): Metadata {
       title: post.title,
       description: post.description,
       url: post.canonical,
-      siteName: 'Sim',
+      siteName: 'Sereno Meridian',
       locale: 'en_US',
       type: 'article',
       publishedTime: post.date,
@@ -79,7 +79,7 @@ export function buildArticleJsonLd(post: BlogMeta) {
     })),
     publisher: {
       '@type': 'Organization',
-      name: 'Sim',
+      name: 'Sereno Meridian',
       logo: {
         '@type': 'ImageObject',
         url: 'https://sim.ai/logo/primary/medium.png',
@@ -104,7 +104,7 @@ export function buildBreadcrumbJsonLd(post: BlogMeta) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sim.ai' },
-      { '@type': 'ListItem', position: 2, name: 'Sim Studio', item: 'https://sim.ai/studio' },
+      { '@type': 'ListItem', position: 2, name: 'Sereno Meridian', item: 'https://sim.ai/studio' },
       { '@type': 'ListItem', position: 3, name: post.title, item: post.canonical },
     ],
   }
@@ -127,7 +127,7 @@ export function buildBlogJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Sim Studio',
+    name: 'Sereno Meridian',
     url: 'https://sim.ai/studio',
     description: 'Announcements, insights, and guides for building AI agent workflows.',
   }

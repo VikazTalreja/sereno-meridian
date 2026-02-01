@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
       <section>
         <p className='mb-4'>Last Updated: October 11, 2025</p>
         <p>
-          This Privacy Policy describes how Sim ("we", "us", "our", or "the Service") collects,
+          This Privacy Policy describes how Sereno Meridian ("we", "us", "our", or "the Service") collects,
           uses, discloses, and protects personal data — including data obtained from Google APIs
           (including Google Workspace APIs) — and your rights and controls regarding that data.
         </p>
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
         <p className='mb-4'>For the purposes of this Privacy Policy:</p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
           <li>
-            <strong>Application</strong> or <strong>Service</strong> means the Sim web or mobile
+            <strong>Application</strong> or <strong>Service</strong> means the Sereno Meridian web or mobile
             application or related services.
           </li>
           <li>
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
           </li>
           <li>
             <strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in
-            this Agreement) refers to Sim. For the purpose of the GDPR, the Company is the Data
+            this Agreement) refers to Sereno Meridian. For the purpose of the GDPR, the Company is the Data
             Controller.
           </li>
           <li>
@@ -137,7 +137,7 @@ export default function PrivacyPolicy() {
             duration of a page visit).
           </li>
           <li>
-            <strong>Website</strong> refers to Sim, accessible from sim.ai
+            <strong>Website</strong> refers to Sereno Meridian, accessible from serenovolante.com
           </li>
           <li>
             <strong>You</strong> means the individual accessing or using the Service, or the
@@ -159,7 +159,7 @@ export default function PrivacyPolicy() {
           <li>Name and email address</li>
           <li>Phone number and mailing address</li>
           <li>Profile picture, settings, and preferences</li>
-          <li>Content you upload (e.g., documents, files) within Sim</li>
+          <li>Content you upload (e.g., documents, files) within Sereno Meridian</li>
           <li>Any data you explicitly input or connect, including via Google integrations</li>
         </ul>
 
@@ -251,7 +251,7 @@ export default function PrivacyPolicy() {
           </li>
         </ul>
         <p className='mt-4'>
-          <strong>Importantly:</strong> any Google Data used within Sim is used only for features
+          <strong>Importantly:</strong> any Google Data used within Sereno Meridian is used only for features
           tied to that specific user (user-facing features), and <strong>never</strong> for
           generalized AI/ML training or shared model improvement across users.
         </p>
@@ -294,12 +294,12 @@ export default function PrivacyPolicy() {
 
         <h3 className='mb-2 font-medium text-xl'>Legal Requirements</h3>
         <p className='mb-4'>
-          Sim may disclose your Personal Information in the good faith belief that such action is
+          Sereno Meridian may disclose your Personal Information in the good faith belief that such action is
           necessary to:
         </p>
         <ul className='list-disc space-y-2 pl-6'>
           <li>To comply with a legal obligation</li>
-          <li>To protect and defend the rights or property of Sim</li>
+          <li>To protect and defend the rights or property of Sereno Meridian</li>
           <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
           <li>To protect the personal safety of users of the Service or the public</li>
           <li>To protect against legal liability</li>
@@ -376,9 +376,9 @@ export default function PrivacyPolicy() {
           We will not store or collect Your payment card details. That information is provided
           directly to Our third-party payment processors whose use of Your personal information is
           governed by their Privacy Policy. These payment processors adhere to the standards set by
-          PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of
-          brands like Visa, Mastercard, American Express and Discover. PCI-DSS requirements help
-          ensure the secure handling of payment information.
+          the PCI Security Standards Council, which is a joint effort of brands like Visa,
+          Mastercard, American Express and Discover. PCI-DSS requirements help ensure the secure
+          handling of payment information.
         </p>
         <h3 className='mb-2 font-medium text-xl'>Payment processors we work with:</h3>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
@@ -392,14 +392,14 @@ export default function PrivacyPolicy() {
         </h2>
         <h3 className='mb-2 font-medium text-xl'>Affirmative Statement & Compliance</h3>
         <p className='mb-4'>
-          Sim’s use, storage, processing, and transfer of Google Data (raw or derived) strictly
+          Sereno Meridian's use, storage, processing, and transfer of Google Data (raw or derived) strictly
           adheres to the Google API Services User Data Policy, including the Limited Use
           requirements, and to the Google Workspace API user data policy (when applicable). We
           explicitly affirm that:
         </p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
           <li>
-            Sim does not use, transfer, or allow Google Data to be used to train, improve, or
+            Sereno Meridian does not use, transfer, or allow Google Data to be used to train, improve, or
             develop generalized or non-personalized AI/ML models.
           </li>
           <li>
@@ -545,7 +545,7 @@ export default function PrivacyPolicy() {
         </h2>
         <p className='mb-4'>
           If you are a resident of the European Economic Area (EEA), you have certain data
-          protection rights. Sim aims to take reasonable steps to allow you to correct, amend,
+          protection rights. Sereno Meridian aims to take reasonable steps to allow you to correct, amend,
           delete, or limit the use of your Personal Information.
         </p>
         <p className='mb-4'>
@@ -575,7 +575,7 @@ export default function PrivacyPolicy() {
           </li>
           <li>
             The right to withdraw consent. You also have the right to withdraw your consent at any
-            time where Sim relied on your consent to process your personal information.
+            time where Sereno Meridian relied on your consent to process your personal information.
           </li>
         </ul>
         <p className='mb-4'>
@@ -637,7 +637,7 @@ export default function PrivacyPolicy() {
 
         <h3 className='mb-2 font-medium text-xl'>Introduction</h3>
         <p className='mb-4'>
-          Sim is dedicated to preserving data security by preventing unauthorized disclosure of
+          Sereno Meridian is dedicated to preserving data security by preventing unauthorized disclosure of
           information. This policy was created to provide security researchers with instructions for
           conducting vulnerability discovery activities and to provide information on how to report
           vulnerabilities that have been discovered. This policy explains which systems and sorts of
@@ -676,21 +676,21 @@ export default function PrivacyPolicy() {
         <h3 className='mb-2 font-medium text-xl'>Authorization</h3>
         <p className='mb-4'>
           Security research carried out in conformity with this policy is deemed permissible. We'll
-          work with you to swiftly understand and fix the problem, and Sim will not suggest or
+          work with you to swiftly understand and fix the problem, and Sereno Meridian will not suggest or
           pursue legal action in connection with your study.
         </p>
 
         <h3 className='mb-2 font-medium text-xl'>Scope</h3>
         <p className='mb-4'>This policy applies to the following systems and services:</p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
-          <li>sim.ai website</li>
-          <li>Sim web application</li>
-          <li>Sim API services</li>
+          <li>serenovolante.com website</li>
+          <li>Sereno Meridian web application</li>
+          <li>Sereno Meridian API services</li>
         </ul>
         <p className='mb-4'>
           Any service that isn't explicitly specified above, such as related services, is out of
           scope and isn't allowed to be tested. Vulnerabilities discovered in third-party solutions
-          Sim interacts with are not covered by this policy and should be reported directly to the
+          Sereno Meridian interacts with are not covered by this policy and should be reported directly to the
           solution vendor in accordance with their disclosure policy (if any). Before beginning your
           inquiry, email us at{' '}
           <Link
@@ -767,7 +767,7 @@ export default function PrivacyPolicy() {
               privacy@sim.ai
             </Link>
           </li>
-          <li>Mailing Address: Sim, 80 Langton St, San Francisco, CA 94103, USA</li>
+          <li>Mailing Address: Sereno Meridian, 80 Langton St, San Francisco, CA 94103, USA</li>
         </ul>
         <p>We will respond to your request within a reasonable timeframe.</p>
       </section>

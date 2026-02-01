@@ -9,8 +9,8 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
   const brand = getBrandConfig()
 
   const defaultTitle = brand.name
-  const summaryFull = `Sim is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sim platform. 60,000+ developers already use Sim to build and deploy AI agent workflows and connect them to 100+ apps. Sim is SOC2 and HIPAA compliant, ensuring enterprise-grade security for AI automation.`
-  const summaryShort = `Sim is an open-source AI agent workflow builder for production workflows.`
+  const summaryFull = `Sereno Meridian is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sereno Meridian platform. 60,000+ developers already use Sereno Meridian to build and deploy AI agent workflows and connect them to 100+ apps. Sereno Meridian is SOC2 and HIPAA compliant, ensuring enterprise-grade security for AI automation.`
+  const summaryShort = `Sereno Meridian is an open-source AI agent workflow builder for production workflows.`
 
   return {
     title: {
@@ -128,9 +128,9 @@ export function generateStructuredData() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Sim',
+    name: 'Sereno Meridian',
     description:
-      'Sim is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sim platform. 60,000+ developers already use Sim to build and deploy AI agent workflows and connect them to 100+ apps. Sim is SOC2 and HIPAA compliant, ensuring enterprise-level security.',
+      'Sereno Meridian is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sereno Meridian platform. 60,000+ developers already use Sereno Meridian to build and deploy AI agent workflows and connect them to 100+ apps. Sereno Meridian is SOC2 and HIPAA compliant, ensuring enterprise-level security.',
     url: getBaseUrl(),
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',
@@ -143,7 +143,7 @@ export function generateStructuredData() {
     },
     creator: {
       '@type': 'Organization',
-      name: 'Sim',
+      name: 'Sereno Meridian',
       url: 'https://sim.ai',
     },
     featureList: [

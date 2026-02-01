@@ -24,11 +24,11 @@ export interface BrandConfig {
  * Default brand configuration values
  */
 const defaultConfig: BrandConfig = {
-  name: 'Sim',
+  name: 'Sereno Meridian',
   logoUrl: undefined,
   faviconUrl: '/favicon/favicon.ico',
   customCssUrl: undefined,
-  supportEmail: 'help@sim.ai',
+  supportEmail: 'help@serenomeridian.ai',
   documentationUrl: undefined,
   termsUrl: undefined,
   privacyUrl: undefined,

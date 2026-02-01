@@ -258,7 +258,7 @@ export async function generateMetadata(props: {
   return {
     title: data.title,
     description:
-      data.description || 'Sim visual workflow builder for AI applications documentation',
+      data.description || 'Sereno Meridian visual workflow builder for AI applications documentation',
     keywords: [
       'AI workflow builder',
       'visual workflow editor',
@@ -271,14 +271,14 @@ export async function generateMetadata(props: {
     ]
       .flat()
       .filter(Boolean),
-    authors: [{ name: 'Sim Team' }],
+    authors: [{ name: 'Sereno Meridian Team' }],
     category: 'Developer Tools',
     openGraph: {
       title: data.title,
       description:
-        data.description || 'Sim visual workflow builder for AI applications documentation',
+        data.description || 'Sereno Meridian visual workflow builder for AI applications documentation',
       url: fullUrl,
-      siteName: 'Sim Documentation',
+      siteName: 'Sereno Meridian Documentation',
       type: 'article',
       locale: params.lang === 'en' ? 'en_US' : `${params.lang}_${params.lang.toUpperCase()}`,
       alternateLocale: ['en', 'es', 'fr', 'de', 'ja', 'zh']
@@ -297,7 +297,7 @@ export async function generateMetadata(props: {
       card: 'summary_large_image',
       title: data.title,
       description:
-        data.description || 'Sim visual workflow builder for AI applications documentation',
+        data.description || 'Sereno Meridian visual workflow builder for AI applications documentation',
       images: [ogImageUrl],
       creator: '@simdotai',
       site: '@simdotai',

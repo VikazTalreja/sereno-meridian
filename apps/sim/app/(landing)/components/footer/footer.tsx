@@ -33,7 +33,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
 
           {/* Links section */}
           <div>
-            <h2 className='mb-[16px] font-medium text-[14px] text-foreground'>More Sim</h2>
+            <h2 className='mb-[16px] font-medium text-[14px] text-foreground'>More Sereno Meridian</h2>
             <div className='flex flex-col gap-[12px]'>
               <Link
                 href='https://docs.sim.ai'
@@ -61,7 +61,7 @@ export default function Footer({ fullWidth = false }: FooterProps) {
                 href='/studio'
                 className='text-[14px] text-muted-foreground transition-colors hover:text-foreground'
               >
-                Sim Studio
+                Sereno Meridian
               </Link>
               <Link
                 href='/changelog'
