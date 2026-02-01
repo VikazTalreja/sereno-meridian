@@ -1,0 +1,557 @@
+---
+title: Jira
+description: Interact with Jira
+---
+
+import { BlockInfoCard } from "@/components/ui/block-info-card"
+
+<BlockInfoCard 
+  type="jira"
+  color="#E0E0E0"
+/>
+
+{/* MANUAL-CONTENT-START:intro */}
+[Jira](https://www.atlassian.com/jira) is a leading project management and issue tracking platform that helps teams plan, track, and manage agile software development projects effectively. As part of the Atlassian suite, Jira has become the industry standard for software development teams and project management professionals worldwide.
+
+Jira provides a comprehensive set of tools for managing complex projects through its flexible and customizable workflow system. With its robust API and integration capabilities, Jira enables teams to streamline their development processes and maintain clear visibility of project progress.
+
+Key features of Jira include:
+
+- Agile Project Management: Support for Scrum and Kanban methodologies with customizable boards and workflows
+- Issue Tracking: Sophisticated tracking system for bugs, stories, epics, and tasks with detailed reporting
+- Workflow Automation: Powerful automation rules to streamline repetitive tasks and processes
+- Advanced Search: JQL (Jira Query Language) for complex issue filtering and reporting
+
+In Sim, the Jira integration allows your agents to seamlessly interact with your project management workflow. This creates opportunities for automated issue creation, updates, and tracking as part of your AI workflows. The integration enables agents to create, retrieve, and update Jira issues programmatically, facilitating automated project management tasks and ensuring that important information is properly tracked and documented. By connecting Sim with Jira, you can build intelligent agents that maintain project visibility while automating routine project management tasks, enhancing team productivity and ensuring consistent project tracking.
+{/* MANUAL-CONTENT-END */}
+
+
+## Usage Instructions
+
+Integrate Jira into the workflow. Can read, write, and update issues. Can also trigger workflows based on Jira webhook events.
+
+
+
+## Tools
+
+### `jira_retrieve`
+
+Retrieve detailed information about a specific Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `projectId` | string | No | Jira project ID \(optional; not required to retrieve a single issue\). |
+| `issueKey` | string | Yes | Jira issue key to retrieve \(e.g., PROJ-123\) |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key \(e.g., PROJ-123\) |
+| `summary` | string | Issue summary |
+| `description` | json | Issue description content |
+| `created` | string | Issue creation timestamp |
+| `updated` | string | Issue last updated timestamp |
+| `issue` | json | Complete issue object with all fields |
+
+### `jira_update`
+
+Update a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `projectId` | string | No | Jira project ID to update issues in. If not provided, all issues will be retrieved. |
+| `issueKey` | string | Yes | Jira issue key to update |
+| `summary` | string | No | New summary for the issue |
+| `description` | string | No | New description for the issue |
+| `status` | string | No | New status for the issue |
+| `priority` | string | No | New priority for the issue |
+| `assignee` | string | No | New assignee for the issue |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Updated issue key \(e.g., PROJ-123\) |
+| `summary` | string | Issue summary after update |
+
+### `jira_write`
+
+Write a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `projectId` | string | Yes | Project ID for the issue |
+| `summary` | string | Yes | Summary for the issue |
+| `description` | string | No | Description for the issue |
+| `priority` | string | No | Priority ID or name for the issue \(e.g., "10000" or "High"\) |
+| `assignee` | string | No | Assignee account ID for the issue |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+| `issueType` | string | Yes | Type of issue to create \(e.g., Task, Story\) |
+| `labels` | array | No | Labels for the issue \(array of label names\) |
+| `duedate` | string | No | Due date for the issue \(format: YYYY-MM-DD\) |
+| `reporter` | string | No | Reporter account ID for the issue |
+| `environment` | string | No | Environment information for the issue |
+| `customFieldId` | string | No | Custom field ID \(e.g., customfield_10001\) |
+| `customFieldValue` | string | No | Value for the custom field |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Created issue key \(e.g., PROJ-123\) |
+| `summary` | string | Issue summary |
+| `url` | string | URL to the created issue |
+| `assigneeId` | string | Account ID of the assigned user \(if assigned\) |
+
+### `jira_bulk_read`
+
+Retrieve multiple Jira issues in bulk
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `projectId` | string | Yes | Jira project ID |
+| `cloudId` | string | No | Jira cloud ID |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `issues` | array | Array of Jira issues with ts, summary, description, created, and updated timestamps |
+
+### `jira_delete_issue`
+
+Delete a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to delete \(e.g., PROJ-123\) |
+| `deleteSubtasks` | boolean | No | Whether to delete subtasks. If false, parent issues with subtasks cannot be deleted. |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Deleted issue key |
+
+### `jira_assign_issue`
+
+Assign a Jira issue to a user
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to assign \(e.g., PROJ-123\) |
+| `accountId` | string | Yes | Account ID of the user to assign the issue to. Use "-1" for automatic assignment or null to unassign. |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key that was assigned |
+| `assigneeId` | string | Account ID of the assignee |
+
+### `jira_transition_issue`
+
+Move a Jira issue between workflow statuses (e.g., To Do -> In Progress)
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to transition \(e.g., PROJ-123\) |
+| `transitionId` | string | Yes | ID of the transition to execute \(e.g., "11" for "To Do", "21" for "In Progress"\) |
+| `comment` | string | No | Optional comment to add when transitioning the issue |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key that was transitioned |
+| `transitionId` | string | Applied transition ID |
+
+### `jira_search_issues`
+
+Search for Jira issues using JQL (Jira Query Language)
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `jql` | string | Yes | JQL query string to search for issues \(e.g., "project = PROJ AND status = Open"\) |
+| `startAt` | number | No | The index of the first result to return \(for pagination\) |
+| `maxResults` | number | No | Maximum number of results to return \(default: 50\) |
+| `fields` | array | No | Array of field names to return \(default: \['summary', 'status', 'assignee', 'created', 'updated'\]\) |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `total` | number | Total number of matching issues |
+| `startAt` | number | Pagination start index |
+| `maxResults` | number | Maximum results per page |
+| `issues` | array | Array of matching issues with key, summary, status, assignee, created, updated |
+
+### `jira_add_comment`
+
+Add a comment to a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to add comment to \(e.g., PROJ-123\) |
+| `body` | string | Yes | Comment body text |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key the comment was added to |
+| `commentId` | string | Created comment ID |
+| `body` | string | Comment text content |
+
+### `jira_get_comments`
+
+Get all comments from a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to get comments from \(e.g., PROJ-123\) |
+| `startAt` | number | No | Index of the first comment to return \(default: 0\) |
+| `maxResults` | number | No | Maximum number of comments to return \(default: 50\) |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `total` | number | Total number of comments |
+| `comments` | array | Array of comments with id, author, body, created, updated |
+
+### `jira_update_comment`
+
+Update an existing comment on a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key containing the comment \(e.g., PROJ-123\) |
+| `commentId` | string | Yes | ID of the comment to update |
+| `body` | string | Yes | Updated comment text |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `commentId` | string | Updated comment ID |
+| `body` | string | Updated comment text |
+
+### `jira_delete_comment`
+
+Delete a comment from a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key containing the comment \(e.g., PROJ-123\) |
+| `commentId` | string | Yes | ID of the comment to delete |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `commentId` | string | Deleted comment ID |
+
+### `jira_get_attachments`
+
+Get all attachments from a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to get attachments from \(e.g., PROJ-123\) |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `attachments` | array | Array of attachments with id, filename, size, mimeType, created, author |
+
+### `jira_delete_attachment`
+
+Delete an attachment from a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `attachmentId` | string | Yes | ID of the attachment to delete |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `attachmentId` | string | Deleted attachment ID |
+
+### `jira_add_worklog`
+
+Add a time tracking worklog entry to a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to add worklog to \(e.g., PROJ-123\) |
+| `timeSpentSeconds` | number | Yes | Time spent in seconds |
+| `comment` | string | No | Optional comment for the worklog entry |
+| `started` | string | No | Optional start time in ISO format \(defaults to current time\) |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key the worklog was added to |
+| `worklogId` | string | Created worklog ID |
+| `timeSpentSeconds` | number | Time spent in seconds |
+
+### `jira_get_worklogs`
+
+Get all worklog entries from a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to get worklogs from \(e.g., PROJ-123\) |
+| `startAt` | number | No | Index of the first worklog to return \(default: 0\) |
+| `maxResults` | number | No | Maximum number of worklogs to return \(default: 50\) |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `total` | number | Total number of worklogs |
+| `worklogs` | array | Array of worklogs with id, author, timeSpentSeconds, timeSpent, comment, created, updated, started |
+
+### `jira_update_worklog`
+
+Update an existing worklog entry on a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key containing the worklog \(e.g., PROJ-123\) |
+| `worklogId` | string | Yes | ID of the worklog entry to update |
+| `timeSpentSeconds` | number | No | Time spent in seconds |
+| `comment` | string | No | Optional comment for the worklog entry |
+| `started` | string | No | Optional start time in ISO format |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `worklogId` | string | Updated worklog ID |
+
+### `jira_delete_worklog`
+
+Delete a worklog entry from a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key containing the worklog \(e.g., PROJ-123\) |
+| `worklogId` | string | Yes | ID of the worklog entry to delete |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `worklogId` | string | Deleted worklog ID |
+
+### `jira_create_issue_link`
+
+Create a link relationship between two Jira issues
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `inwardIssueKey` | string | Yes | Jira issue key for the inward issue \(e.g., PROJ-123\) |
+| `outwardIssueKey` | string | Yes | Jira issue key for the outward issue \(e.g., PROJ-456\) |
+| `linkType` | string | Yes | The type of link relationship \(e.g., "Blocks", "Relates to", "Duplicates"\) |
+| `comment` | string | No | Optional comment to add to the issue link |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `inwardIssue` | string | Inward issue key |
+| `outwardIssue` | string | Outward issue key |
+| `linkType` | string | Type of issue link |
+| `linkId` | string | Created link ID |
+
+### `jira_delete_issue_link`
+
+Delete a link between two Jira issues
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `linkId` | string | Yes | ID of the issue link to delete |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `linkId` | string | Deleted link ID |
+
+### `jira_add_watcher`
+
+Add a watcher to a Jira issue to receive notifications about updates
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to add watcher to \(e.g., PROJ-123\) |
+| `accountId` | string | Yes | Account ID of the user to add as watcher |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `watcherAccountId` | string | Added watcher account ID |
+
+### `jira_remove_watcher`
+
+Remove a watcher from a Jira issue
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `issueKey` | string | Yes | Jira issue key to remove watcher from \(e.g., PROJ-123\) |
+| `accountId` | string | Yes | Account ID of the user to remove as watcher |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `issueKey` | string | Issue key |
+| `watcherAccountId` | string | Removed watcher account ID |
+
+### `jira_get_users`
+
+Get Jira users. If an account ID is provided, returns a single user. Otherwise, returns a list of all users.
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `domain` | string | Yes | Your Jira domain \(e.g., yourcompany.atlassian.net\) |
+| `accountId` | string | No | Optional account ID to get a specific user. If not provided, returns all users. |
+| `startAt` | number | No | The index of the first user to return \(for pagination, default: 0\) |
+| `maxResults` | number | No | Maximum number of users to return \(default: 50\) |
+| `cloudId` | string | No | Jira Cloud ID for the instance. If not provided, it will be fetched using the domain. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `ts` | string | Timestamp of the operation |
+| `users` | json | Array of users with accountId, displayName, emailAddress, active status, and avatarUrls |
+| `total` | number | Total number of users returned |
+| `startAt` | number | Pagination start index |
+| `maxResults` | number | Maximum results per page |
+
+

@@ -1,0 +1,995 @@
+---
+title: Salesforce
+description: Interact with Salesforce CRM
+---
+
+import { BlockInfoCard } from "@/components/ui/block-info-card"
+
+<BlockInfoCard 
+  type="salesforce"
+  color="#E0E0E0"
+/>
+
+{/* MANUAL-CONTENT-START:intro */}
+The [Salesforce](https://www.salesforce.com/) tool enables you to connect directly to your Salesforce CRM and perform a wide range of customer relationship management operations within your agentic workflows. With seamless and secure integration, you can efficiently access and automate key business processes across your sales, support, and marketing data.
+
+With the Salesforce tool, you can:
+
+- **Retrieve accounts**: Use the `salesforce_get_accounts` operation to fetch Accounts from Salesforce with custom filters, sorting, and field selection.
+- **Create accounts**: Automatically add new Accounts to Salesforce using the `salesforce_create_account` operation, specifying details like name, industry, and billing address.
+- **Manage contacts**: (If provided, similar tooling available for Contacts—add, update, or fetch contacts as needed.)
+- **Handle leads & opportunities**: Integrate lead and opportunity management into your workflow, letting your agents capture, qualify, and update sales pipeline data.
+- **Track cases & tasks**: Automate customer support and follow-up activities by interacting with Cases and Tasks within Salesforce.
+
+The Salesforce tool is ideal for workflows where your agents need to streamline sales, account management, lead generation, and support operations. Whether your agents are syncing data across platforms, providing real-time customer insights, or automating routine CRM updates, the Salesforce tool brings the full power and extensibility of Salesforce into your programmatic, agent-driven processes.
+{/* MANUAL-CONTENT-END */}
+
+
+## Usage Instructions
+
+Integrate Salesforce into your workflow. Manage accounts, contacts, leads, opportunities, cases, and tasks with powerful automation capabilities.
+
+
+
+## Tools
+
+### `salesforce_get_accounts`
+
+Retrieve accounts from Salesforce CRM
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | The ID token from Salesforce OAuth \(contains instance URL\) |
+| `instanceUrl` | string | No | The Salesforce instance URL |
+| `limit` | string | No | Number of results to return \(default: 100, max: 2000\) |
+| `fields` | string | No | Comma-separated list of fields to return \(e.g., "Id,Name,Industry,Phone"\) |
+| `orderBy` | string | No | Field to order by \(e.g., "Name ASC" or "CreatedDate DESC"\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Accounts data |
+| ↳ `accounts` | array | Array of account objects |
+| ↳ `paging` | object | Pagination information |
+|   ↳ `nextRecordsUrl` | string | URL for next page of results |
+|   ↳ `totalSize` | number | Total number of records |
+|   ↳ `done` | boolean | Whether all records returned |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of accounts returned |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_create_account`
+
+Create a new account in Salesforce CRM
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `name` | string | Yes | Account name \(required\) |
+| `type` | string | No | Account type \(e.g., Customer, Partner, Prospect\) |
+| `industry` | string | No | Industry \(e.g., Technology, Healthcare, Finance\) |
+| `phone` | string | No | Phone number |
+| `website` | string | No | Website URL |
+| `billingStreet` | string | No | Billing street address |
+| `billingCity` | string | No | Billing city |
+| `billingState` | string | No | Billing state/province |
+| `billingPostalCode` | string | No | Billing postal code |
+| `billingCountry` | string | No | Billing country |
+| `description` | string | No | Account description |
+| `annualRevenue` | string | No | Annual revenue \(number\) |
+| `numberOfEmployees` | string | No | Number of employees \(number\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Created account data |
+| ↳ `id` | string | Created account ID |
+| ↳ `success` | boolean | Salesforce operation success |
+| ↳ `created` | boolean | Whether account was created |
+
+### `salesforce_update_account`
+
+Update an existing account in Salesforce CRM
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `accountId` | string | Yes | Account ID to update \(required\) |
+| `name` | string | No | Account name |
+| `type` | string | No | Account type |
+| `industry` | string | No | Industry |
+| `phone` | string | No | Phone number |
+| `website` | string | No | Website URL |
+| `billingStreet` | string | No | Billing street address |
+| `billingCity` | string | No | Billing city |
+| `billingState` | string | No | Billing state/province |
+| `billingPostalCode` | string | No | Billing postal code |
+| `billingCountry` | string | No | Billing country |
+| `description` | string | No | Account description |
+| `annualRevenue` | string | No | Annual revenue \(number\) |
+| `numberOfEmployees` | string | No | Number of employees \(number\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Updated account data |
+| ↳ `id` | string | Updated account ID |
+| ↳ `updated` | boolean | Whether account was updated |
+
+### `salesforce_delete_account`
+
+Delete an account from Salesforce CRM
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `accountId` | string | Yes | Account ID to delete \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Deleted account data |
+| ↳ `id` | string | Deleted account ID |
+| ↳ `deleted` | boolean | Whether account was deleted |
+
+### `salesforce_get_contacts`
+
+Get contact(s) from Salesforce - single contact if ID provided, or list if not
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `contactId` | string | No | Contact ID \(if provided, returns single contact\) |
+| `limit` | string | No | Number of results \(default: 100, max: 2000\). Only for list query. |
+| `fields` | string | No | Comma-separated fields \(e.g., "Id,FirstName,LastName,Email,Phone"\) |
+| `orderBy` | string | No | Order by field \(e.g., "LastName ASC"\). Only for list query. |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Contact\(s\) data |
+| ↳ `contacts` | array | Array of contacts \(list query\) |
+| ↳ `contact` | object | Single contact \(by ID\) |
+| ↳ `paging` | object | Pagination information |
+|   ↳ `nextRecordsUrl` | string | URL for next page of results |
+|   ↳ `totalSize` | number | Total number of records |
+|   ↳ `done` | boolean | Whether all records returned |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of contacts returned |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `singleContact` | boolean | Whether single contact was returned |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_create_contact`
+
+Create a new contact in Salesforce CRM
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `lastName` | string | Yes | Last name \(required\) |
+| `firstName` | string | No | First name |
+| `email` | string | No | Email address |
+| `phone` | string | No | Phone number |
+| `accountId` | string | No | Account ID to associate contact with |
+| `title` | string | No | No description |
+| `department` | string | No | Department |
+| `mailingStreet` | string | No | Mailing street |
+| `mailingCity` | string | No | Mailing city |
+| `mailingState` | string | No | Mailing state |
+| `mailingPostalCode` | string | No | Mailing postal code |
+| `mailingCountry` | string | No | Mailing country |
+| `description` | string | No | Contact description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Created contact data |
+| ↳ `id` | string | Created contact ID |
+| ↳ `success` | boolean | Salesforce operation success |
+| ↳ `created` | boolean | Whether contact was created |
+
+### `salesforce_update_contact`
+
+Update an existing contact in Salesforce CRM
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `contactId` | string | Yes | Contact ID to update \(required\) |
+| `lastName` | string | No | Last name |
+| `firstName` | string | No | First name |
+| `email` | string | No | Email address |
+| `phone` | string | No | Phone number |
+| `accountId` | string | No | Account ID to associate with |
+| `title` | string | No | No description |
+| `department` | string | No | Department |
+| `mailingStreet` | string | No | Mailing street |
+| `mailingCity` | string | No | Mailing city |
+| `mailingState` | string | No | Mailing state |
+| `mailingPostalCode` | string | No | Mailing postal code |
+| `mailingCountry` | string | No | Mailing country |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Updated contact data |
+| ↳ `id` | string | Updated contact ID |
+| ↳ `updated` | boolean | Whether contact was updated |
+
+### `salesforce_delete_contact`
+
+Delete a contact from Salesforce CRM
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `contactId` | string | Yes | Contact ID to delete \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Deleted contact data |
+| ↳ `id` | string | Deleted contact ID |
+| ↳ `deleted` | boolean | Whether contact was deleted |
+
+### `salesforce_get_leads`
+
+Get lead(s) from Salesforce
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `leadId` | string | No | Lead ID \(optional\) |
+| `limit` | string | No | Max results \(default: 100\) |
+| `fields` | string | No | Comma-separated fields |
+| `orderBy` | string | No | Order by field |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Lead data |
+| ↳ `lead` | object | Single lead object \(when leadId provided\) |
+| ↳ `leads` | array | Array of lead objects \(when listing\) |
+| ↳ `paging` | object | Pagination information |
+|   ↳ `nextRecordsUrl` | string | URL for next page of results |
+|   ↳ `totalSize` | number | Total number of records |
+|   ↳ `done` | boolean | Whether all records returned |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of leads returned |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `singleLead` | boolean | Whether single lead was returned |
+| ↳ `success` | boolean | Operation success status |
+
+### `salesforce_create_lead`
+
+Create a new lead
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `lastName` | string | Yes | Last name \(required\) |
+| `company` | string | Yes | Company \(required\) |
+| `firstName` | string | No | First name |
+| `email` | string | No | No description |
+| `phone` | string | No | No description |
+| `status` | string | No | Lead status |
+| `leadSource` | string | No | Lead source |
+| `title` | string | No | No description |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Created lead data |
+| ↳ `id` | string | Created lead ID |
+| ↳ `success` | boolean | Salesforce operation success |
+| ↳ `created` | boolean | Whether lead was created |
+
+### `salesforce_update_lead`
+
+Update an existing lead
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `leadId` | string | Yes | Lead ID \(required\) |
+| `lastName` | string | No | Last name |
+| `company` | string | No | No description |
+| `firstName` | string | No | First name |
+| `email` | string | No | No description |
+| `phone` | string | No | No description |
+| `status` | string | No | Lead status |
+| `leadSource` | string | No | Lead source |
+| `title` | string | No | No description |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Updated lead data |
+| ↳ `id` | string | Updated lead ID |
+| ↳ `updated` | boolean | Whether lead was updated |
+
+### `salesforce_delete_lead`
+
+Delete a lead
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `leadId` | string | Yes | Lead ID \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Deleted lead data |
+| ↳ `id` | string | Deleted lead ID |
+| ↳ `deleted` | boolean | Whether lead was deleted |
+
+### `salesforce_get_opportunities`
+
+Get opportunity(ies) from Salesforce
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `opportunityId` | string | No | Opportunity ID \(optional\) |
+| `limit` | string | No | Max results \(default: 100\) |
+| `fields` | string | No | Comma-separated fields |
+| `orderBy` | string | No | Order by field |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Opportunity data |
+| ↳ `opportunity` | object | Single opportunity object \(when opportunityId provided\) |
+| ↳ `opportunities` | array | Array of opportunity objects \(when listing\) |
+| ↳ `paging` | object | Pagination information |
+|   ↳ `nextRecordsUrl` | string | URL for next page of results |
+|   ↳ `totalSize` | number | Total number of records |
+|   ↳ `done` | boolean | Whether all records returned |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of opportunities returned |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `success` | boolean | Operation success status |
+
+### `salesforce_create_opportunity`
+
+Create a new opportunity
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `name` | string | Yes | Opportunity name \(required\) |
+| `stageName` | string | Yes | Stage name \(required\) |
+| `closeDate` | string | Yes | Close date YYYY-MM-DD \(required\) |
+| `accountId` | string | No | Account ID |
+| `amount` | string | No | Amount \(number\) |
+| `probability` | string | No | Probability \(0-100\) |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Created opportunity data |
+| ↳ `id` | string | Created opportunity ID |
+| ↳ `success` | boolean | Salesforce operation success |
+| ↳ `created` | boolean | Whether opportunity was created |
+
+### `salesforce_update_opportunity`
+
+Update an existing opportunity
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `opportunityId` | string | Yes | Opportunity ID \(required\) |
+| `name` | string | No | Opportunity name |
+| `stageName` | string | No | Stage name |
+| `closeDate` | string | No | Close date YYYY-MM-DD |
+| `accountId` | string | No | Account ID |
+| `amount` | string | No | No description |
+| `probability` | string | No | Probability \(0-100\) |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Updated opportunity data |
+| ↳ `id` | string | Updated opportunity ID |
+| ↳ `updated` | boolean | Whether opportunity was updated |
+
+### `salesforce_delete_opportunity`
+
+Delete an opportunity
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `opportunityId` | string | Yes | Opportunity ID \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Deleted opportunity data |
+| ↳ `id` | string | Deleted opportunity ID |
+| ↳ `deleted` | boolean | Whether opportunity was deleted |
+
+### `salesforce_get_cases`
+
+Get case(s) from Salesforce
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `caseId` | string | No | Case ID \(optional\) |
+| `limit` | string | No | Max results \(default: 100\) |
+| `fields` | string | No | Comma-separated fields |
+| `orderBy` | string | No | Order by field |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Case data |
+| ↳ `case` | object | Single case object \(when caseId provided\) |
+| ↳ `cases` | array | Array of case objects \(when listing\) |
+| ↳ `paging` | object | Pagination information |
+|   ↳ `nextRecordsUrl` | string | URL for next page of results |
+|   ↳ `totalSize` | number | Total number of records |
+|   ↳ `done` | boolean | Whether all records returned |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of cases returned |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `success` | boolean | Operation success status |
+
+### `salesforce_create_case`
+
+Create a new case
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `subject` | string | Yes | Case subject \(required\) |
+| `status` | string | No | Status \(e.g., New, Working, Escalated\) |
+| `priority` | string | No | Priority \(e.g., Low, Medium, High\) |
+| `origin` | string | No | Origin \(e.g., Phone, Email, Web\) |
+| `contactId` | string | No | Contact ID |
+| `accountId` | string | No | Account ID |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Created case data |
+| ↳ `id` | string | Created case ID |
+| ↳ `success` | boolean | Salesforce operation success |
+| ↳ `created` | boolean | Whether case was created |
+
+### `salesforce_update_case`
+
+Update an existing case
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `caseId` | string | Yes | Case ID \(required\) |
+| `subject` | string | No | Case subject |
+| `status` | string | No | Status |
+| `priority` | string | No | Priority |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Updated case data |
+| ↳ `id` | string | Updated case ID |
+| ↳ `updated` | boolean | Whether case was updated |
+
+### `salesforce_delete_case`
+
+Delete a case
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `caseId` | string | Yes | Case ID \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Deleted case data |
+| ↳ `id` | string | Deleted case ID |
+| ↳ `deleted` | boolean | Whether case was deleted |
+
+### `salesforce_get_tasks`
+
+Get task(s) from Salesforce
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `taskId` | string | No | Task ID \(optional\) |
+| `limit` | string | No | Max results \(default: 100\) |
+| `fields` | string | No | Comma-separated fields |
+| `orderBy` | string | No | Order by field |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Task data |
+| ↳ `task` | object | Single task object \(when taskId provided\) |
+| ↳ `tasks` | array | Array of task objects \(when listing\) |
+| ↳ `paging` | object | Pagination information |
+|   ↳ `nextRecordsUrl` | string | URL for next page of results |
+|   ↳ `totalSize` | number | Total number of records |
+|   ↳ `done` | boolean | Whether all records returned |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of tasks returned |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `success` | boolean | Operation success status |
+
+### `salesforce_create_task`
+
+Create a new task
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `subject` | string | Yes | Task subject \(required\) |
+| `status` | string | No | Status \(e.g., Not Started, In Progress, Completed\) |
+| `priority` | string | No | Priority \(e.g., Low, Normal, High\) |
+| `activityDate` | string | No | Due date YYYY-MM-DD |
+| `whoId` | string | No | Related Contact/Lead ID |
+| `whatId` | string | No | Related Account/Opportunity ID |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Created task data |
+| ↳ `id` | string | Created task ID |
+| ↳ `success` | boolean | Salesforce operation success |
+| ↳ `created` | boolean | Whether task was created |
+
+### `salesforce_update_task`
+
+Update an existing task
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `taskId` | string | Yes | Task ID \(required\) |
+| `subject` | string | No | Task subject |
+| `status` | string | No | Status |
+| `priority` | string | No | Priority |
+| `activityDate` | string | No | Due date YYYY-MM-DD |
+| `description` | string | No | Description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Updated task data |
+| ↳ `id` | string | Updated task ID |
+| ↳ `updated` | boolean | Whether task was updated |
+
+### `salesforce_delete_task`
+
+Delete a task
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `taskId` | string | Yes | Task ID \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Deleted task data |
+| ↳ `id` | string | Deleted task ID |
+| ↳ `deleted` | boolean | Whether task was deleted |
+
+### `salesforce_list_reports`
+
+Get a list of reports accessible by the current user
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `folderName` | string | No | Filter by folder name |
+| `searchTerm` | string | No | Search term to filter reports by name |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Reports data |
+| ↳ `reports` | array | Array of report objects |
+| ↳ `totalReturned` | number | Number of reports returned |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_get_report`
+
+Get metadata and describe information for a specific report
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `reportId` | string | Yes | Report ID \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Report metadata |
+| ↳ `report` | object | Report metadata object |
+| ↳ `reportId` | string | Report ID |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_run_report`
+
+Execute a report and retrieve the results
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `reportId` | string | Yes | Report ID \(required\) |
+| `includeDetails` | string | No | Include detail rows \(true/false, default: true\) |
+| `filters` | string | No | JSON string of report filters to apply |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Report results |
+| ↳ `reportId` | string | Report ID |
+| ↳ `reportMetadata` | object | Report metadata |
+| ↳ `reportExtendedMetadata` | object | Extended metadata |
+| ↳ `factMap` | object | Report data organized by groupings |
+| ↳ `groupingsDown` | object | Row groupings |
+| ↳ `groupingsAcross` | object | Column groupings |
+| ↳ `hasDetailRows` | boolean | Whether report has detail rows |
+| ↳ `allData` | boolean | Whether all data is returned |
+| ↳ `reportName` | string | Report name |
+| ↳ `reportFormat` | string | Report format type |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_list_report_types`
+
+Get a list of available report types
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Report types data |
+| ↳ `reportTypes` | array | Array of report type objects |
+| ↳ `totalReturned` | number | Number of report types returned |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_list_dashboards`
+
+Get a list of dashboards accessible by the current user
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `folderName` | string | No | Filter by folder name |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Dashboards data |
+| ↳ `dashboards` | array | Array of dashboard objects |
+| ↳ `totalReturned` | number | Number of dashboards returned |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_get_dashboard`
+
+Get details and results for a specific dashboard
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `dashboardId` | string | Yes | Dashboard ID \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Dashboard data |
+| ↳ `dashboard` | object | Dashboard details |
+| ↳ `dashboardId` | string | Dashboard ID |
+| ↳ `components` | array | Dashboard component data |
+| ↳ `dashboardName` | string | Dashboard name |
+| ↳ `folderId` | string | Folder ID containing the dashboard |
+| ↳ `runningUser` | object | Running user information |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_refresh_dashboard`
+
+Refresh a dashboard to get the latest data
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `dashboardId` | string | Yes | Dashboard ID \(required\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Refreshed dashboard data |
+| ↳ `dashboard` | object | Dashboard details |
+| ↳ `dashboardId` | string | Dashboard ID |
+| ↳ `components` | array | Dashboard component data |
+| ↳ `status` | object | Dashboard status |
+| ↳ `dashboardName` | string | Dashboard name |
+| ↳ `refreshDate` | string | Date when dashboard was refreshed |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_query`
+
+Execute a custom SOQL query to retrieve data from Salesforce
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `query` | string | Yes | SOQL query to execute \(e.g., SELECT Id, Name FROM Account LIMIT 10\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Query results |
+| ↳ `records` | array | Array of record objects |
+| ↳ `totalSize` | number | Total number of records matching query |
+| ↳ `done` | boolean | Whether all records have been returned |
+| ↳ `nextRecordsUrl` | string | URL to fetch next batch of records |
+| ↳ `query` | string | The executed SOQL query |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of records returned in this response |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_query_more`
+
+Retrieve additional query results using the nextRecordsUrl from a previous query
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `nextRecordsUrl` | string | Yes | The nextRecordsUrl from a previous query response |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Query results |
+| ↳ `records` | array | Array of record objects |
+| ↳ `totalSize` | number | Total number of records matching query |
+| ↳ `done` | boolean | Whether all records have been returned |
+| ↳ `nextRecordsUrl` | string | URL to fetch next batch of records |
+| ↳ `metadata` | object | Response metadata |
+|   ↳ `totalReturned` | number | Number of records returned in this response |
+|   ↳ `hasMore` | boolean | Whether more records exist |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_describe_object`
+
+Get metadata and field information for a Salesforce object
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+| `objectName` | string | Yes | API name of the object \(e.g., Account, Contact, Lead, Custom_Object__c\) |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Object metadata |
+| ↳ `objectName` | string | API name of the object |
+| ↳ `label` | string | Display label |
+| ↳ `labelPlural` | string | Plural display label |
+| ↳ `fields` | array | Array of field definitions |
+| ↳ `keyPrefix` | string | ID prefix for this object type |
+| ↳ `queryable` | boolean | Whether object can be queried |
+| ↳ `createable` | boolean | Whether records can be created |
+| ↳ `updateable` | boolean | Whether records can be updated |
+| ↳ `deletable` | boolean | Whether records can be deleted |
+| ↳ `childRelationships` | array | Child relationship definitions |
+| ↳ `recordTypeInfos` | array | Record type information |
+| ↳ `fieldCount` | number | Number of fields in the object |
+| ↳ `success` | boolean | Salesforce operation success |
+
+### `salesforce_list_objects`
+
+Get a list of all available Salesforce objects
+
+#### Input
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `idToken` | string | No | No description |
+| `instanceUrl` | string | No | No description |
+
+#### Output
+
+| Parameter | Type | Description |
+| --------- | ---- | ----------- |
+| `success` | boolean | Operation success status |
+| `output` | object | Objects list |
+| ↳ `objects` | array | Array of available Salesforce objects |
+| ↳ `encoding` | string | Encoding used |
+| ↳ `maxBatchSize` | number | Maximum batch size |
+| ↳ `totalReturned` | number | Number of objects returned |
+| ↳ `success` | boolean | Salesforce operation success |
+
+
