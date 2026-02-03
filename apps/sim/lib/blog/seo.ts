@@ -82,7 +82,7 @@ export function buildArticleJsonLd(post: BlogMeta) {
       name: 'Sereno Meridian',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://sim.ai/logo/primary/medium.png',
+        url: 'https://sim.ai/logo/Sereno_Logo.png',
       },
     },
     mainEntityOfPage: {

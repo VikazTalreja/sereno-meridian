@@ -25,7 +25,7 @@ export interface BrandConfig {
  */
 const defaultConfig: BrandConfig = {
   name: 'Sereno Meridian',
-  logoUrl: undefined,
+  logoUrl: '/logo/Sereno_Logo.png',
   faviconUrl: '/favicon/favicon.ico',
   customCssUrl: undefined,
   supportEmail: 'help@serenomeridian.ai',

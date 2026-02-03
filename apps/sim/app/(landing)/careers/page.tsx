@@ -422,7 +422,7 @@ export default function CareersPage() {
                 </Label>
                 <Textarea
                   id='message'
-                  placeholder='Tell us about your experience, what excites you about Sim, and why you would be a great fit for this role...'
+                  placeholder='Tell us about your experience, what excites you about Sereno Meridian, and why you would be a great fit for this role...'
                   className={cn(
                     'min-h-[140px]',
                     showErrors &&

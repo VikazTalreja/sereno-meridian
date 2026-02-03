@@ -821,7 +821,7 @@ function ServerDetailView({ workspaceId, serverId, onBack }: ServerDetailViewPro
               <p className='text-[11px] text-[var(--text-muted)]'>
                 {editServerIsPublic
                   ? 'Anyone with the URL can call this server without authentication'
-                  : 'Requests must include your Sim API key in the X-API-Key header'}
+                  : 'Requests must include your Sereno Meridian API key in the X-API-Key header'}
               </p>
             </div>
           </ModalBody>

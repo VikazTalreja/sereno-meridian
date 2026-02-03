@@ -67,7 +67,7 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
       siteName: brand.name,
       images: [
         {
-          url: brand.logoUrl || '/logo/426-240/primary/small.png',
+          url: brand.logoUrl || '/logo/Sereno_Logo.png',
           width: 2130,
           height: 1200,
           alt: brand.name,
@@ -78,7 +78,7 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
       card: 'summary_large_image',
       title: defaultTitle,
       description: summaryFull,
-      images: [brand.logoUrl || '/logo/426-240/primary/small.png'],
+      images: [brand.logoUrl || '/logo/Sereno_Logo.png'],
       creator: '@simdotai',
       site: '@simdotai',
     },

@@ -19,8 +19,8 @@ export function PoweredBySim() {
       >
         <span>Powered by</span>
         <Image
-          src='/logo/b&w/text/small.png'
-          alt='Sim'
+          src='/logo/Sereno_Logo.png'
+          alt='Sereno Meridian'
           width={30}
           height={15}
           className='h-[14px] w-auto'

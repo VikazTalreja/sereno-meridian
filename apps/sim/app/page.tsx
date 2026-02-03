@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/logo/426-240/primary/small.png',
+        url: '/logo/Sereno_Logo.png',
         width: 2130,
         height: 1200,
         alt: 'Sereno Meridian - AI Agent Workflow Builder',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description:
       'Open-source platform for agentic workflows. 60,000+ developers. Visual builder. 100+ integrations. SOC2 & HIPAA compliant.',
     images: {
-      url: '/logo/426-240/primary/small.png',
+      url: '/logo/Sereno_Logo.png',
       alt: 'Sereno Meridian - AI Agent Workflow Builder',
     },
   },

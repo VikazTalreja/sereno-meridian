@@ -13,8 +13,8 @@ export default function StructuredData() {
         logo: {
           '@type': 'ImageObject',
           '@id': 'https://sim.ai/#logo',
-          url: 'https://sim.ai/logo/b&w/text/b&w.svg',
-          contentUrl: 'https://sim.ai/logo/b&w/text/b&w.svg',
+          url: 'https://sim.ai/logo/Sereno_Logo.png',
+          contentUrl: 'https://sim.ai/logo/Sereno_Logo.png',
           width: 49.78314,
           height: 24.276,
           caption: 'Sereno Meridian Logo',
@@ -173,7 +173,7 @@ export default function StructuredData() {
         screenshot: [
           {
             '@type': 'ImageObject',
-            url: 'https://sim.ai/logo/426-240/primary/small.png',
+            url: 'https://sim.ai/logo/Sereno_Logo.png',
             caption: 'Sereno Meridian AI agent workflow builder interface',
           },
         ],

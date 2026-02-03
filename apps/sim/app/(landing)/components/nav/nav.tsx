@@ -141,8 +141,8 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
             />
           ) : (
             <Image
-              src='/logo/b&w/text/b&w.svg'
-              alt='Sim - Workflows for LLMs'
+              src='/logo/Sereno_Logo.png'
+              alt='Sereno Meridian - Workflows for LLMs'
               width={49.78314}
               height={24.276}
               priority
@@ -186,7 +186,7 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className={`${buttonClass} group inline-flex items-center justify-center gap-2 rounded-[10px] py-[6px] pr-[10px] pl-[12px] text-[15px] text-white transition-all`}
-            aria-label='Get started with Sim - Sign up for free'
+            aria-label='Get started with Sereno Meridian - Sign up for free'
             prefetch={true}
           >
             <span className='flex items-center gap-1'>

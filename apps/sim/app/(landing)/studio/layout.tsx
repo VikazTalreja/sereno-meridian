@@ -6,7 +6,7 @@ export default function StudioLayout({ children }: { children: React.ReactNode }
     '@type': 'Organization',
     name: 'Sereno Meridian',
     url: 'https://sim.ai',
-    logo: 'https://sim.ai/logo/primary/small.png',
+    logo: 'https://sim.ai/logo/Sereno_Logo.png',
     sameAs: ['https://x.com/simdotai'],
   }
 

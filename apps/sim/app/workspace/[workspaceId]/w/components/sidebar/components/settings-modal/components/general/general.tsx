@@ -550,7 +550,7 @@ export function General({ onOpenChange }: GeneralProps) {
       </div>
 
       <p className='-mt-[8px] text-[12px] text-[var(--text-muted)]'>
-        We use OpenTelemetry to collect anonymous usage data to improve Sim. You can opt-out at any
+        We use OpenTelemetry to collect anonymous usage data to improve Sereno Meridian. You can opt-out at any
         time.
       </p>
 

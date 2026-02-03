@@ -51,10 +51,10 @@ export async function generateMetadata({
     const baseUrl = getBaseUrl()
 
     const details = template.details as { tagline?: string; about?: string } | null
-    const description = details?.tagline || 'AI workflow template on Sim'
+    const description = details?.tagline || 'AI workflow template on Sereno Meridian'
 
     const hasOgImage = !!template.ogImageUrl
-    const ogImageUrl = template.ogImageUrl || `${baseUrl}/logo/primary/rounded.png`
+    const ogImageUrl = template.ogImageUrl || `${baseUrl}/logo/Sereno_Logo.png`
 
     return {
       title: template.name,
@@ -64,7 +64,7 @@ export async function generateMetadata({
         description,
         type: 'website',
         url: `${baseUrl}/workspace/${workspaceId}/templates/${id}`,
-        siteName: 'Sim',
+        siteName: 'Sereno Meridian',
         images: [
           {
             url: ogImageUrl,
@@ -88,7 +88,7 @@ export async function generateMetadata({
     logger.error('Failed to generate workspace template metadata:', error)
     return {
       title: 'Template',
-      description: 'AI workflow template on Sim',
+      description: 'AI workflow template on Sereno Meridian',
     }
   }
 }

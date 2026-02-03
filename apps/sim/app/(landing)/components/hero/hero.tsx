@@ -406,7 +406,7 @@ export default function Hero() {
           <textarea
             id='agent-description'
             placeholder={
-              isMobile ? 'Build an AI agent...' : 'Ask Sim to build an agent to read my emails...'
+              isMobile ? 'Build an AI agent...' : 'Ask Sereno Meridian to build an agent to read my emails...'
             }
             className='h-[100px] w-full resize-none px-3 py-2.5 text-sm sm:h-[120px] sm:px-4 sm:py-3 sm:text-base'
             value={textValue}
