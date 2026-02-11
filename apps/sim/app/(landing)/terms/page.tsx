@@ -297,14 +297,8 @@ export default function TermsOfService() {
         </p>
         <p className='mb-4'>
           You have the right to opt out of the provisions of this Arbitration Agreement by sending a
-          timely written notice of your decision to opt out to:{' '}
-          <Link
-            href='mailto:legal@sim.ai'
-            className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
-          >
-            legal@sim.ai{' '}
-          </Link>
-          within 30 days after first becoming subject to this Arbitration Agreement.
+          timely written notice of your decision to opt out to our legal team within 30 days after
+          first becoming subject to this Arbitration Agreement.
         </p>
       </section>
 
@@ -347,26 +341,14 @@ export default function TermsOfService() {
           </li>
         </ul>
         <p>
-          Our Copyright Agent can be reached at:{' '}
-          <Link
-            href='mailto:copyright@sim.ai'
-            className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
-          >
-            copyright@sim.ai
-          </Link>
+          Our Copyright Agent can be reached via our support channels.
         </p>
       </section>
 
       <section>
         <h2 className='mb-4 font-semibold text-2xl'>18. Contact Us</h2>
         <p>
-          If you have any questions about these Terms, please contact us at:{' '}
-          <Link
-            href='mailto:legal@sim.ai'
-            className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
-          >
-            legal@sim.ai
-          </Link>
+          If you have any questions about these Terms, please contact our legal team.
         </p>
       </section>
     </LegalLayout>

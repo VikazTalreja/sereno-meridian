@@ -7,6 +7,7 @@ import { getBaseUrl } from '@/lib/core/utils/urls'
  */
 export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metadata {
   const brand = getBrandConfig()
+  const faviconUrl = brand.faviconUrl || '/favicon/favicon-32x32.png?v=2'
 
   const defaultTitle = brand.name
   const summaryFull = `Sereno Meridian is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sereno Meridian platform. 60,000+ developers already use Sereno Meridian to build and deploy AI agent workflows and connect them to 100+ apps. Sereno Meridian is SOC2 and HIPAA compliant, ensuring enterprise-grade security for AI automation.`
@@ -85,22 +86,22 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
     manifest: '/manifest.webmanifest',
     icons: {
       icon: [
-        { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-        { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon/favicon-16x16.png?v=2', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon/favicon-32x32.png?v=2', sizes: '32x32', type: 'image/png' },
         {
-          url: '/favicon/favicon-192x192.png',
+          url: '/favicon/favicon-192x192.png?v=2',
           sizes: '192x192',
           type: 'image/png',
         },
         {
-          url: '/favicon/favicon-512x512.png',
+          url: '/favicon/favicon-512x512.png?v=2',
           sizes: '512x512',
           type: 'image/png',
         },
-        { url: brand.faviconUrl || '/sim.png', sizes: 'any', type: 'image/png' },
+        { url: faviconUrl, sizes: 'any', type: 'image/png' },
       ],
       apple: '/favicon/apple-touch-icon.png',
-      shortcut: brand.faviconUrl || '/favicon/favicon.ico',
+      shortcut: faviconUrl,
     },
     appleWebApp: {
       capable: true,

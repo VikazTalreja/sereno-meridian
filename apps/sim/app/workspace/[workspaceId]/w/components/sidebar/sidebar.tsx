@@ -3,6 +3,7 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createLogger } from '@sim/logger'
 import { Database, HelpCircle, Layout, Plus, Search, Settings } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useParams, usePathname, useRouter } from 'next/navigation'
 import { Button, Download, FolderPlus, Library, Loader, Tooltip } from '@/components/emcn'
@@ -486,7 +487,20 @@ export const Sidebar = memo(function Sidebar() {
     <>
       {isCollapsed ? (
         /* Floating collapsed header - minimal pill showing workspace name and expand toggle */
-        <div className='fixed top-[14px] left-[10px] z-10 w-fit rounded-[8px] border border-[var(--border)] bg-[var(--surface-1)] py-[4px] pr-[10px] pl-[6px]'>
+        <div className='fixed top-[14px] left-[10px] z-10 w-fit rounded-[8px] border border-[var(--border)] bg-[var(--surface-1)] py-[6px] pr-[12px] pl-[10px]'>
+          <div className='mb-[4px] flex items-center gap-[8px]'>
+            <div className='flex h-[22px] w-[22px] items-center justify-center rounded-[5px] bg-[var(--surface-3)]'>
+              <Image
+                src='/logo/Sereno_Logo.png'
+                alt='Sereno logo'
+                width={18}
+                height={18}
+              />
+            </div>
+            <span className='max-w-[140px] truncate text-[13px] font-semibold tracking-[0.08em] text-[var(--text-secondary)]'>
+              Sereno Meridian
+            </span>
+          </div>
           <WorkspaceHeader
             activeWorkspace={activeWorkspace}
             workspaceId={workspaceId}
@@ -521,7 +535,20 @@ export const Sidebar = memo(function Sidebar() {
           >
             <div className='flex h-full flex-col border-[var(--border)] border-r pt-[12px]'>
               {/* Header */}
-              <div className='flex-shrink-0 px-[14px]'>
+              <div className='flex-shrink-0 px-[16px]'>
+                <div className='mb-[12px] flex items-center gap-[10px]'>
+                  <div className='flex h-[30px] w-[30px] items-center justify-center rounded-[7px] bg-[var(--surface-3)]'>
+                    <Image
+                      src='/logo/Sereno_Logo.png'
+                      alt='Sereno logo'
+                      width={22}
+                      height={22}
+                    />
+                  </div>
+                  <span className='truncate text-[18px] font-semibold tracking-[0.08em] text-[var(--text-primary)]'>
+                    Sereno Meridian
+                  </span>
+                </div>
                 <WorkspaceHeader
                   activeWorkspace={activeWorkspace}
                   workspaceId={workspaceId}

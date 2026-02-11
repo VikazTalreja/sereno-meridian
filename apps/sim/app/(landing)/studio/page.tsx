@@ -35,7 +35,7 @@ export default async function StudioIndex({
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'Sereno Meridian',
-    url: 'https://sim.ai/studio',
+    url: '/studio',
     description: 'Announcements, insights, and guides for building AI agent workflows.',
   }
 

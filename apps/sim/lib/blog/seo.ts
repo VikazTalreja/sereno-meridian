@@ -46,7 +46,6 @@ export function buildPostMetadata(post: BlogMeta): Metadata {
       description: post.description,
       images: [post.ogImage],
       creator: post.author.url?.includes('x.com') ? `@${post.author.xHandle || ''}` : undefined,
-      site: '@simdotai',
     },
     other: {
       'article:published_time': post.date,
@@ -82,7 +81,7 @@ export function buildArticleJsonLd(post: BlogMeta) {
       name: 'Sereno Meridian',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://sim.ai/logo/Sereno_Logo.png',
+        url: '/logo/Sereno_Logo.png',
       },
     },
     mainEntityOfPage: {
@@ -103,8 +102,8 @@ export function buildBreadcrumbJsonLd(post: BlogMeta) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sim.ai' },
-      { '@type': 'ListItem', position: 2, name: 'Sereno Meridian', item: 'https://sim.ai/studio' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+      { '@type': 'ListItem', position: 2, name: 'Sereno Meridian', item: '/studio' },
       { '@type': 'ListItem', position: 3, name: post.title, item: post.canonical },
     ],
   }
@@ -128,7 +127,7 @@ export function buildBlogJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'Sereno Meridian',
-    url: 'https://sim.ai/studio',
+    url: '/studio',
     description: 'Announcements, insights, and guides for building AI agent workflows.',
   }
 }

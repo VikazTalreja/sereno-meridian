@@ -602,15 +602,8 @@ export default function PrivacyPolicy() {
         <p className='mb-4'>
           We do not sell your personal information for monetary consideration. However, some data
           sharing practices (such as analytics or advertising services) may be considered a "sale"
-          or "share" under CCPA/CPRA. You have the right to opt-out of such data sharing. To
-          exercise this right, contact us at{' '}
-          <Link
-            href='mailto:privacy@sim.ai'
-            className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
-          >
-            privacy@sim.ai
-          </Link>
-          .
+          or "share" under CCPA/CPRA. You have the right to opt-out of such data sharing. Please
+          contact our privacy team to exercise this right.
         </p>
 
         <h3 className='mb-2 font-medium text-xl'>Global Privacy Control (GPC)</h3>
@@ -691,15 +684,7 @@ export default function PrivacyPolicy() {
           Any service that isn't explicitly specified above, such as related services, is out of
           scope and isn't allowed to be tested. Vulnerabilities discovered in third-party solutions
           Sereno Meridian interacts with are not covered by this policy and should be reported directly to the
-          solution vendor in accordance with their disclosure policy (if any). Before beginning your
-          inquiry, email us at{' '}
-          <Link
-            href='mailto:security@sim.ai'
-            className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
-          >
-            security@sim.ai
-          </Link>{' '}
-          if you're unsure whether a system or endpoint is in scope.
+          solution vendor in accordance with their disclosure policy (if any).
         </p>
 
         <h3 className='mb-2 font-medium text-xl'>Types of testing</h3>
@@ -714,15 +699,9 @@ export default function PrivacyPolicy() {
 
         <h3 className='mb-2 font-medium text-xl'>Reporting a vulnerability</h3>
         <p className='mb-4'>
-          To report any security flaws, send an email to{' '}
-          <Link
-            href='mailto:security@sim.ai'
-            className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
-          >
-            security@sim.ai
-          </Link>
-          . The next business day, we'll acknowledge receipt of your vulnerability report and keep
-          you updated on our progress. Reports can be anonymously submitted.
+          To report any security flaws, send us a vulnerability report through our support
+          channels. The next business day, we'll acknowledge receipt of your vulnerability report
+          and keep you updated on our progress. Reports can be anonymously submitted.
         </p>
 
         <h3 className='mb-2 font-medium text-xl'>Desirable information</h3>
@@ -758,15 +737,7 @@ export default function PrivacyPolicy() {
           practices, you may contact us at:
         </p>
         <ul className='mb-4 list-disc space-y-2 pl-6'>
-          <li>
-            Email:{' '}
-            <Link
-              href='mailto:privacy@sim.ai'
-              className='text-[var(--brand-primary-hex)] underline hover:text-[var(--brand-primary-hover-hex)]'
-            >
-              privacy@sim.ai
-            </Link>
-          </li>
+          <li>Email: our privacy team</li>
           <li>Mailing Address: Sereno Meridian, 80 Langton St, San Francisco, CA 94103, USA</li>
         </ul>
         <p>We will respond to your request within a reasonable timeframe.</p>

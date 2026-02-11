@@ -39,9 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@simdotai',
-    creator: '@simdotai',
-    title: 'Sereno Meridian - AI Agent Workflow Builder | Open Source',
+    title: 'Sereno Meridian - AI Agent Workflow Builder',
     description:
       'Open-source platform for agentic workflows. 60,000+ developers. Visual builder. 100+ integrations. SOC2 & HIPAA compliant.',
     images: {

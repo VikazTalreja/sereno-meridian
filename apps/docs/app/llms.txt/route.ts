@@ -3,7 +3,7 @@ import { source } from '@/lib/source'
 export const revalidate = false
 
 export async function GET() {
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = '/'
 
   try {
     const pages = source.getPages().filter((page) => {
@@ -35,7 +35,7 @@ export async function GET() {
       })
     })
 
-    const manifest = `# Sim Documentation
+    const manifest = `# Sereno Meridian Documentation
 
 > Visual Workflow Builder for AI Applications
 

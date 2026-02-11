@@ -1,9 +1,9 @@
 export const revalidate = false
 
 export async function GET() {
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = '/'
 
-  const robotsTxt = `# Robots.txt for Sim Documentation
+  const robotsTxt = `# Robots.txt for Documentation
 # Generated on ${new Date().toISOString()}
 
 User-agent: *
@@ -72,7 +72,7 @@ Allow: /llms-full.txt
 Allow: /llms.mdx/
 
 # Sitemaps
-Sitemap: ${baseUrl}/sitemap.xml
+Sitemap: ${baseUrl}sitemap.xml
 
 # Crawl delay for aggressive bots (optional)
 # Crawl-delay: 1
@@ -80,17 +80,17 @@ Sitemap: ${baseUrl}/sitemap.xml
 # Additional resources for AI indexing
 # See https://github.com/AnswerDotAI/llms-txt for more info
 # LLM-friendly content:
-#   Manifest: ${baseUrl}/llms.txt
-#   Full content: ${baseUrl}/llms-full.txt
-#   Individual pages: ${baseUrl}/llms.mdx/[page-path]
+#   Manifest: ${baseUrl}llms.txt
+#   Full content: ${baseUrl}llms-full.txt
+#   Individual pages: ${baseUrl}llms.mdx/[page-path]
 
 # Multi-language documentation available at:
-# ${baseUrl}/en - English
-# ${baseUrl}/es - Español
-# ${baseUrl}/fr - Français
-# ${baseUrl}/de - Deutsch
-# ${baseUrl}/ja - 日本語
-# ${baseUrl}/zh - 简体中文`
+# ${baseUrl}en - English
+# ${baseUrl}es - Español
+# ${baseUrl}fr - Français
+# ${baseUrl}de - Deutsch
+# ${baseUrl}ja - 日本語
+# ${baseUrl}zh - 简体中文`
 
   return new Response(robotsTxt, {
     headers: {

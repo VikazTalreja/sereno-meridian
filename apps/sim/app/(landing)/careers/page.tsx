@@ -511,13 +511,7 @@ export default function CareersPage() {
           {/* Additional Info */}
           <section className='mt-6 text-center text-gray-600 text-sm'>
             <p>
-              Questions? Email us at{' '}
-              <a
-                href='mailto:careers@sim.ai'
-                className='font-medium text-gray-900 underline transition-colors hover:text-gray-700'
-              >
-                careers@sim.ai
-              </a>
+            Questions? Please contact our careers team.
             </p>
           </section>
         </div>

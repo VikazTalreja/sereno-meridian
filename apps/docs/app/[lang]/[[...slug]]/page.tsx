@@ -20,7 +20,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[]; l
 
   const data = page.data as PageData
   const MDX = data.body
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = '/'
 
   const pageTreeRecord = source.pageTree as Record<string, any>
   const pageTree =
@@ -250,10 +250,10 @@ export async function generateMetadata(props: {
   if (!page) notFound()
 
   const data = page.data as PageData
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = '/'
   const fullUrl = `${baseUrl}${page.url}`
 
-  const ogImageUrl = `${baseUrl}/api/og?title=${encodeURIComponent(data.title)}`
+  const ogImageUrl = `/api/og?title=${encodeURIComponent(data.title)}`
 
   return {
     title: data.title,
@@ -299,8 +299,6 @@ export async function generateMetadata(props: {
       description:
         data.description || 'Sereno Meridian visual workflow builder for AI applications documentation',
       images: [ogImageUrl],
-      creator: '@simdotai',
-      site: '@simdotai',
     },
     robots: {
       index: true,

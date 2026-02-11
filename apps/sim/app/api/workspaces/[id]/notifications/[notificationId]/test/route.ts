@@ -192,7 +192,7 @@ async function testEmail(subscription: typeof workspaceNotificationSubscription.
     to: subscription.emailRecipients,
     subject: `[Test] Workflow Execution: ${data.workflowName}`,
     html,
-    text: `This is a test notification from Sim.\n\nWorkflow: ${data.workflowName}\nStatus: ${data.status}\nDuration: ${data.totalDurationMs}ms\n\nView Log: ${logUrl}\n\nThis notification is configured for workspace notifications.`,
+    text: `This is a test notification from Sereno Meridian.\n\nWorkflow: ${data.workflowName}\nStatus: ${data.status}\nDuration: ${data.totalDurationMs}ms\n\nView Log: ${logUrl}\n\nThis notification is configured for workspace notifications.`,
     emailType: 'notifications',
   })
 
@@ -246,7 +246,7 @@ async function testSlack(
         elements: [
           {
             type: 'mrkdwn',
-            text: 'This is a test notification from Sim workspace notifications.',
+            text: 'This is a test notification from Sereno Meridian workspace notifications.',
           },
         ],
       },

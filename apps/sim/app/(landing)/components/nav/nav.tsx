@@ -1,19 +1,14 @@
-'use client'
+ 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { createLogger } from '@sim/logger'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { GithubIcon } from '@/components/icons'
 import { useBrandConfig } from '@/lib/branding/branding'
 import { isHosted } from '@/lib/core/config/feature-flags'
 import { soehne } from '@/app/_styles/fonts/soehne/soehne'
-import { getFormattedGitHubStars } from '@/app/(landing)/actions/github'
 import { useBrandedButtonClass } from '@/hooks/use-branded-button-class'
-
-const logger = createLogger('nav')
 
 interface NavProps {
   hideAuthButtons?: boolean
@@ -21,7 +16,6 @@ interface NavProps {
 }
 
 export default function Nav({ hideAuthButtons = false, variant = 'landing' }: NavProps = {}) {
-  const [githubStars, setGithubStars] = useState('26.1k')
   const [isHovered, setIsHovered] = useState(false)
   const [isLoginHovered, setIsLoginHovered] = useState(false)
   const router = useRouter()
@@ -30,20 +24,7 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
 
   useEffect(() => {
     if (variant !== 'landing') return
-
-    const timeoutId = setTimeout(() => {
-      const fetchStars = async () => {
-        try {
-          const stars = await getFormattedGitHubStars()
-          setGithubStars(stars)
-        } catch (error) {
-          logger.warn('Error fetching GitHub stars:', error)
-        }
-      }
-      fetchStars()
-    }, 2000)
-
-    return () => clearTimeout(timeoutId)
+    // No-op hook kept to preserve potential future behavior without GitHub stars.
   }, [variant])
 
   const handleLoginClick = useCallback(
@@ -62,9 +43,7 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
     <>
       <li>
         <Link
-          href='https://docs.sim.ai'
-          target='_blank'
-          rel='noopener noreferrer'
+          href='#'
           className='text-[16px] text-muted-foreground transition-colors hover:text-foreground'
           prefetch={false}
         >
@@ -98,18 +77,6 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
           Careers
         </Link>
       </li>
-      <li>
-        <a
-          href='https://github.com/simstudioai/sim'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='flex items-center gap-2 text-[16px] text-muted-foreground transition-colors hover:text-foreground'
-          aria-label={`GitHub repository - ${githubStars} stars`}
-        >
-          <GithubIcon className='h-[16px] w-[16px]' aria-hidden='true' />
-          <span aria-live='polite'>{githubStars}</span>
-        </a>
-      </li>
     </>
   )
 
@@ -131,9 +98,11 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
             <Image
               src={brand.logoUrl}
               alt={`${brand.name} Logo`}
-              width={49.78314}
-              height={24.276}
-              className='h-[24.276px] w-auto object-contain'
+              width={240}
+              height={120}
+              className={`w-auto object-contain ${
+                variant === 'auth' ? 'h-[120px]' : 'h-[48px]'
+              }`}
               priority
               loading='eager'
               quality={100}
@@ -143,8 +112,11 @@ export default function Nav({ hideAuthButtons = false, variant = 'landing' }: Na
             <Image
               src='/logo/Sereno_Logo.png'
               alt='Sereno Meridian - Workflows for LLMs'
-              width={49.78314}
-              height={24.276}
+              width={240}
+              height={120}
+              className={`w-auto object-contain ${
+                variant === 'auth' ? 'h-[120px]' : 'h-[48px]'
+              }`}
               priority
               loading='eager'
               quality={100}

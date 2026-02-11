@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
 
     const authUrl = new URL('https://trello.com/1/authorize')
     authUrl.searchParams.set('key', apiKey)
-    authUrl.searchParams.set('name', 'Sim Studio')
+    authUrl.searchParams.set('name', 'Sereno Meridian')
     authUrl.searchParams.set('expiration', 'never')
     authUrl.searchParams.set('response_type', 'token')
     authUrl.searchParams.set('scope', 'read,write')
