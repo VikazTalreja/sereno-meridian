@@ -1,0 +1,1 @@
+export { azureDataFactoryWebhookTrigger } from './webhook'

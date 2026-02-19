@@ -1,0 +1,1 @@
+export { sapAribaWebhookTrigger } from './webhook'

@@ -1,0 +1,1 @@
+export { siemensTeamcenterWebhookTrigger } from './webhook'
