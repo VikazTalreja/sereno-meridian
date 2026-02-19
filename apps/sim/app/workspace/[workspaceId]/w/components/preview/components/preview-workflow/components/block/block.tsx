@@ -238,16 +238,16 @@ function SubBlockRow({ title, value, subBlock, rawValue }: SubBlockRowProps) {
   const displayValue = maskedValue || hydratedName || (isSelectorType && value ? '-' : value)
 
   return (
-    <div className='flex items-center gap-[8px]'>
+    <div className='flex items-center gap-[8px] rounded-[6px] bg-[var(--surface-3)]/65 px-[8px] py-[5px]'>
       <span
-        className='min-w-0 truncate text-[14px] text-[var(--text-tertiary)] capitalize'
+        className='min-w-0 truncate text-[12px] font-medium text-[var(--text-tertiary)] capitalize'
         title={title}
       >
         {title}
       </span>
       {displayValue !== undefined && (
         <span
-          className='flex-1 truncate text-right text-[14px] text-[var(--text-primary)]'
+          className='flex-1 truncate text-right text-[12px] text-[var(--text-secondary)]'
           title={displayValue}
         >
           {displayValue}
@@ -427,18 +427,18 @@ function WorkflowPreviewBlockInner({ data }: NodeProps<WorkflowPreviewBlockData>
   const hasSuccess = executionStatus === 'success'
 
   return (
-    <div className='relative w-[250px] select-none rounded-[8px] border border-[var(--border-1)] bg-[var(--surface-2)]'>
+    <div className='relative w-[260px] select-none rounded-[12px] border border-[var(--border-1)]/80 bg-gradient-to-b from-[var(--surface-1)] to-[var(--surface-2)] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_2px_14px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)]'>
       {/* Selection ring overlay (takes priority over execution rings) */}
       {isPreviewSelected && (
-        <div className='pointer-events-none absolute inset-0 z-40 rounded-[8px] ring-[1.75px] ring-[var(--brand-secondary)]' />
+        <div className='pointer-events-none absolute inset-0 z-40 rounded-[12px] ring-[1.75px] ring-[var(--brand-secondary)]' />
       )}
       {/* Success ring overlay (only shown if not selected) */}
       {!isPreviewSelected && hasSuccess && (
-        <div className='pointer-events-none absolute inset-0 z-40 rounded-[8px] ring-[1.75px] ring-[var(--brand-tertiary-2)]' />
+        <div className='pointer-events-none absolute inset-0 z-40 rounded-[12px] ring-[1.75px] ring-[var(--brand-tertiary-2)]' />
       )}
       {/* Error ring overlay (only shown if not selected) */}
       {!isPreviewSelected && hasError && (
-        <div className='pointer-events-none absolute inset-0 z-40 rounded-[8px] ring-[1.75px] ring-[var(--text-error)]' />
+        <div className='pointer-events-none absolute inset-0 z-40 rounded-[12px] ring-[1.75px] ring-[var(--text-error)]' />
       )}
 
       {/* Target handle - not shown for triggers/starters */}
@@ -458,17 +458,17 @@ function WorkflowPreviewBlockInner({ data }: NodeProps<WorkflowPreviewBlockData>
 
       {/* Header - matches WorkflowBlock structure */}
       <div
-        className={`flex items-center justify-between p-[8px] ${hasContentBelowHeader ? 'border-[var(--border-1)] border-b' : ''}`}
+        className={`flex items-center justify-between px-[10px] py-[9px] ${hasContentBelowHeader ? 'border-[var(--border-1)]/65 border-b' : ''}`}
       >
         <div className='relative z-10 flex min-w-0 flex-1 items-center gap-[10px]'>
           <div
-            className='flex h-[24px] w-[24px] flex-shrink-0 items-center justify-center rounded-[6px]'
+            className='flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-[8px] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_1px_3px_-1px_rgba(0,0,0,0.1)]'
             style={{ background: enabled ? blockConfig.bgColor : 'gray' }}
           >
-            <IconComponent className='h-[16px] w-[16px] text-white' />
+            <IconComponent className='h-[16px] w-[16px] text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]' />
           </div>
           <span
-            className={`truncate font-medium text-[16px] ${!enabled ? 'text-[var(--text-muted)]' : ''}`}
+            className={`truncate font-semibold text-[14px] tracking-[-0.01em] ${!enabled ? 'text-[var(--text-muted)]' : ''}`}
             title={name}
           >
             {name}
@@ -478,7 +478,7 @@ function WorkflowPreviewBlockInner({ data }: NodeProps<WorkflowPreviewBlockData>
 
       {/* Content area with subblocks */}
       {hasContentBelowHeader && (
-        <div className='flex flex-col gap-[8px] p-[8px]'>
+        <div className='flex flex-col gap-[6px] px-[10px] py-[8px]'>
           {type === 'condition' ? (
             conditionRows.map((cond) => (
               <SubBlockRow

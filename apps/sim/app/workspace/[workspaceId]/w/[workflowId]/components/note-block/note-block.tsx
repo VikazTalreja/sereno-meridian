@@ -530,14 +530,14 @@ export const NoteBlock = memo(function NoteBlock({
     <div className='group relative'>
       <div
         className={cn(
-          'relative z-[20] w-[250px] cursor-default select-none rounded-[8px] border border-[var(--border)] bg-[var(--surface-2)]'
+          'relative z-[20] w-[260px] cursor-default select-none rounded-[12px] border border-[var(--border)]/80 bg-gradient-to-b from-[var(--surface-1)] to-[var(--surface-2)] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_2px_14px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)] backdrop-blur-sm transition-all duration-200 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_8px_28px_rgba(0,0,0,0.14),0_2px_6px_rgba(0,0,0,0.06)]'
         )}
         onClick={handleClick}
       >
         <ActionBar blockId={id} blockType={type} disabled={!userPermissions.canEdit} />
 
         <div
-          className='note-drag-handle flex cursor-grab items-center justify-between border-[var(--divider)] border-b p-[8px] [&:active]:cursor-grabbing'
+          className='note-drag-handle flex cursor-grab items-center justify-between border-[var(--divider)]/65 border-b px-[10px] py-[9px] [&:active]:cursor-grabbing'
           onMouseDown={(event) => {
             event.stopPropagation()
           }}
@@ -555,7 +555,7 @@ export const NoteBlock = memo(function NoteBlock({
           </div>
         </div>
 
-        <div className='relative overflow-hidden p-[8px]'>
+        <div className='relative overflow-hidden px-[10px] py-[8px]'>
           <div className='relative max-w-full break-all'>
             {isEmpty ? (
               <p className='text-[#868686] text-sm'>Add note...</p>
@@ -566,7 +566,7 @@ export const NoteBlock = memo(function NoteBlock({
         </div>
         {hasRing && (
           <div
-            className={cn('pointer-events-none absolute inset-0 z-40 rounded-[8px]', ringStyles)}
+            className={cn('pointer-events-none absolute inset-0 z-40 rounded-[12px]', ringStyles)}
           />
         )}
       </div>

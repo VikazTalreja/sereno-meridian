@@ -44,20 +44,20 @@ export const LandingBlock = React.memo(function LandingBlock({
 
   return (
     <div
-      className={`z-10 flex w-[250px] flex-col rounded-[8px] border border-[#E5E5E5] bg-white ${className ?? ''}`}
+      className={`z-10 flex w-[260px] flex-col rounded-[12px] border border-[#B8C5E8] bg-gradient-to-b from-[#F4F8FF] to-[#E8EFFC] shadow-[inset_0_1px_0_rgba(255,255,255,0.90),0_2px_12px_rgba(58,78,168,0.12),0_1px_3px_rgba(58,78,168,0.08)] backdrop-blur-sm transition-all duration-200 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.90),0_8px_28px_rgba(58,78,168,0.18),0_2px_8px_rgba(58,78,168,0.08)] ${className ?? ''}`}
     >
       {/* Header - matches workflow-block.tsx header styling */}
       <div
-        className={`flex items-center justify-between p-[8px] ${hasContentBelowHeader ? 'border-[#E5E5E5] border-b' : ''}`}
+        className={`flex items-center justify-between px-[10px] py-[9px] ${hasContentBelowHeader ? 'border-[#B8C5E8]/70 border-b' : ''}`}
       >
         <div className='flex min-w-0 flex-1 items-center gap-[10px]'>
           <div
-            className='flex h-[24px] w-[24px] flex-shrink-0 items-center justify-center rounded-[6px]'
+            className='flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-[8px] shadow-[inset_0_1px_0_rgba(255,255,255,0.30),0_1px_3px_rgba(0,0,0,0.14)]'
             style={{ background: color as string }}
           >
             {icon}
           </div>
-          <span className='truncate font-medium text-[#171717] text-[16px]' title={name}>
+          <span className='truncate font-semibold text-[#171717] text-[14px] tracking-[-0.01em]' title={name}>
             {name}
           </span>
         </div>
@@ -65,7 +65,7 @@ export const LandingBlock = React.memo(function LandingBlock({
 
       {/* Content - SubBlock Rows matching workflow-block.tsx */}
       {hasContentBelowHeader && (
-        <div className='flex flex-col gap-[8px] p-[8px]'>
+        <div className='flex flex-col gap-[6px] px-[10px] py-[8px]'>
           {tags.map((tag) => (
             <SubBlockRow key={tag.label} icon={tag.icon} label={tag.label} />
           ))}
