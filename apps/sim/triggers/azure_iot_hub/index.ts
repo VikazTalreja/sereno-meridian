@@ -1,0 +1,1 @@
+export { azureIoTHubWebhookTrigger } from './webhook'

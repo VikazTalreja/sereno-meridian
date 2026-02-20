@@ -1,0 +1,1 @@
+export { salesforceMarketingCloudWebhookTrigger } from './webhook'

@@ -1,0 +1,1 @@
+export { azureExpressRouteWebhookTrigger } from './webhook'

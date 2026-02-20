@@ -1,0 +1,1 @@
+export { azureAISearchWebhookTrigger } from './webhook'

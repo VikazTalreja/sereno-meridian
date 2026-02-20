@@ -1,0 +1,1 @@
+export { ptcWindchillWebhookTrigger } from './webhook'

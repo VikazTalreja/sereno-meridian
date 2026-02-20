@@ -5,6 +5,25 @@ import {
   calendlyRoutingFormSubmittedTrigger,
   calendlyWebhookTrigger,
 } from '@/triggers/calendly'
+import { avevaPISystemWebhookTrigger } from '@/triggers/aveva_pi_system'
+import { azureAISearchWebhookTrigger } from '@/triggers/azure_ai_search'
+import { azureDataFactoryWebhookTrigger } from '@/triggers/azure_data_factory'
+import { azureDigitalTwinsWebhookTrigger } from '@/triggers/azure_digital_twins'
+import { azureExpressRouteWebhookTrigger } from '@/triggers/azure_expressroute'
+import { azureIoTHubWebhookTrigger } from '@/triggers/azure_iot_hub'
+import { azureKubernetesServiceWebhookTrigger } from '@/triggers/azure_kubernetes_service'
+import { azureOpenAIWebhookTrigger } from '@/triggers/azure_openai'
+import { honeywellDCSWebhookTrigger } from '@/triggers/honeywell_dcs'
+import { ibmMaximoWebhookTrigger } from '@/triggers/ibm_maximo'
+import { oracleFinancialsCloudWebhookTrigger } from '@/triggers/oracle_financials_cloud'
+import { oraclePrimaveraP6WebhookTrigger } from '@/triggers/oracle_primavera_p6'
+import { ptcWindchillWebhookTrigger } from '@/triggers/ptc_windchill'
+import { qlikSenseWebhookTrigger } from '@/triggers/qlik_sense'
+import { salesforceMarketingCloudWebhookTrigger } from '@/triggers/salesforce_marketing_cloud'
+import { salesforceSalesCloudWebhookTrigger } from '@/triggers/salesforce_sales_cloud'
+import { sapAribaWebhookTrigger } from '@/triggers/sap_ariba'
+import { sapS4HANAWebhookTrigger } from '@/triggers/sap_s4hana'
+import { siemensTeamcenterWebhookTrigger } from '@/triggers/siemens_teamcenter'
 import {
   circlebackMeetingCompletedTrigger,
   circlebackMeetingNotesTrigger,
@@ -207,4 +226,23 @@ export const TRIGGER_REGISTRY: TriggerRegistry = {
   hubspot_ticket_deleted: hubspotTicketDeletedTrigger,
   hubspot_ticket_property_changed: hubspotTicketPropertyChangedTrigger,
   imap_poller: imapPollingTrigger,
+  salesforce_marketing_cloud_webhook: salesforceMarketingCloudWebhookTrigger,
+  salesforce_sales_cloud_webhook: salesforceSalesCloudWebhookTrigger,
+  oracle_financials_cloud_webhook: oracleFinancialsCloudWebhookTrigger,
+  sap_ariba_webhook: sapAribaWebhookTrigger,
+  sap_s4hana_webhook: sapS4HANAWebhookTrigger,
+  ibm_maximo_webhook: ibmMaximoWebhookTrigger,
+  qlik_sense_webhook: qlikSenseWebhookTrigger,
+  oracle_primavera_p6_webhook: oraclePrimaveraP6WebhookTrigger,
+  siemens_teamcenter_webhook: siemensTeamcenterWebhookTrigger,
+  honeywell_dcs_webhook: honeywellDCSWebhookTrigger,
+  aveva_pi_system_webhook: avevaPISystemWebhookTrigger,
+  azure_kubernetes_service_webhook: azureKubernetesServiceWebhookTrigger,
+  azure_openai_webhook: azureOpenAIWebhookTrigger,
+  azure_ai_search_webhook: azureAISearchWebhookTrigger,
+  azure_iot_hub_webhook: azureIoTHubWebhookTrigger,
+  azure_digital_twins_webhook: azureDigitalTwinsWebhookTrigger,
+  azure_data_factory_webhook: azureDataFactoryWebhookTrigger,
+  azure_expressroute_webhook: azureExpressRouteWebhookTrigger,
+  ptc_windchill_webhook: ptcWindchillWebhookTrigger,
 }

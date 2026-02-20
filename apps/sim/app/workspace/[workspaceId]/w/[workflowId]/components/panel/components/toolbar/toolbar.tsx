@@ -118,14 +118,14 @@ const ToolbarItem = memo(function ToolbarItem({
       onClick={handleClick}
       onContextMenu={handleContextMenu}
       className={clsx(
-        'group flex h-[28px] items-center gap-[8px] rounded-[8px] px-[6px] text-[14px]',
-        'cursor-pointer hover:bg-[var(--surface-6)] active:cursor-grabbing dark:hover:bg-[var(--surface-5)]',
+        'group flex h-[32px] items-center gap-[8px] rounded-[8px] px-[7px] text-[13px]',
+        'cursor-pointer transition-all duration-150 hover:bg-[var(--surface-6)] active:cursor-grabbing active:scale-[0.98] dark:hover:bg-[var(--surface-5)]',
         'focus-visible:bg-[var(--surface-6)] focus-visible:outline-none dark:focus-visible:bg-[var(--surface-5)]'
       )}
       onKeyDown={handleKeyDown}
     >
       <div
-        className='relative flex h-[16px] w-[16px] flex-shrink-0 items-center justify-center overflow-hidden rounded-[4px]'
+        className='relative flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center overflow-hidden rounded-[5px] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_1px_3px_rgba(0,0,0,0.14)]'
         style={{ background: item.bgColor }}
       >
         {Icon && (
@@ -133,15 +133,15 @@ const ToolbarItem = memo(function ToolbarItem({
             className={clsx(
               'toolbar-item-icon text-white transition-transform duration-200',
               'group-hover:scale-110',
-              '!h-[10px] !w-[10px]'
+              '!h-[11px] !w-[11px]'
             )}
           />
         )}
       </div>
       <span
         className={clsx(
-          'truncate font-medium',
-          'text-[var(--text-secondary)] group-hover:text-[var(--text-primary)]',
+          'truncate font-medium tracking-[-0.01em]',
+          'text-[var(--text-secondary)] transition-colors duration-150 group-hover:text-[var(--text-primary)]',
           'group-focus-visible:text-[var(--text-primary)]'
         )}
       >

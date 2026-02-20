@@ -1,0 +1,1 @@
+export { azureKubernetesServiceWebhookTrigger } from './webhook'
