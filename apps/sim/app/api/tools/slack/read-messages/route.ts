@@ -100,7 +100,7 @@ export async function POST(request: NextRequest) {
           {
             success: false,
             error:
-              'Bot is not in the channel. Please invite the Sim bot to your Slack channel by typing: /invite @Sim Studio',
+              'Bot is not in the channel. Please invite the bot to your Slack channel before using this tool.',
           },
           { status: 400 }
         )

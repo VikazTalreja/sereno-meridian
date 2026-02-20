@@ -6,12 +6,12 @@ export const revalidate = 3600
 export async function GET() {
   const posts = await getAllPostMeta()
   const items = posts.slice(0, 50)
-  const site = 'https://sim.ai'
+  const site = '/'
 
   const xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>Sim Studio</title>
+    <title>Sereno Meridian</title>
     <link>${site}</link>
     <description>Announcements, insights, and guides for AI agent workflows.</description>
     ${items

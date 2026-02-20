@@ -7,10 +7,11 @@ import { getBaseUrl } from '@/lib/core/utils/urls'
  */
 export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metadata {
   const brand = getBrandConfig()
+  const faviconUrl = brand.faviconUrl || '/favicon/favicon-32x32.png?v=2'
 
   const defaultTitle = brand.name
-  const summaryFull = `Sim is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sim platform. 60,000+ developers already use Sim to build and deploy AI agent workflows and connect them to 100+ apps. Sim is SOC2 and HIPAA compliant, ensuring enterprise-grade security for AI automation.`
-  const summaryShort = `Sim is an open-source AI agent workflow builder for production workflows.`
+  const summaryFull = `Sereno Meridian is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sereno Meridian platform. 60,000+ developers already use Sereno Meridian to build and deploy AI agent workflows and connect them to 100+ apps. Sereno Meridian is SOC2 and HIPAA compliant, ensuring enterprise-grade security for AI automation.`
+  const summaryShort = `Sereno Meridian is an open-source AI agent workflow builder for production workflows.`
 
   return {
     title: {
@@ -67,7 +68,7 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
       siteName: brand.name,
       images: [
         {
-          url: brand.logoUrl || '/logo/426-240/primary/small.png',
+          url: brand.logoUrl || '/logo/Sereno_Logo.png',
           width: 2130,
           height: 1200,
           alt: brand.name,
@@ -78,29 +79,29 @@ export function generateBrandedMetadata(override: Partial<Metadata> = {}): Metad
       card: 'summary_large_image',
       title: defaultTitle,
       description: summaryFull,
-      images: [brand.logoUrl || '/logo/426-240/primary/small.png'],
+      images: [brand.logoUrl || '/logo/Sereno_Logo.png'],
       creator: '@simdotai',
       site: '@simdotai',
     },
     manifest: '/manifest.webmanifest',
     icons: {
       icon: [
-        { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-        { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/favicon/favicon-16x16.png?v=2', sizes: '16x16', type: 'image/png' },
+        { url: '/favicon/favicon-32x32.png?v=2', sizes: '32x32', type: 'image/png' },
         {
-          url: '/favicon/favicon-192x192.png',
+          url: '/favicon/favicon-192x192.png?v=2',
           sizes: '192x192',
           type: 'image/png',
         },
         {
-          url: '/favicon/favicon-512x512.png',
+          url: '/favicon/favicon-512x512.png?v=2',
           sizes: '512x512',
           type: 'image/png',
         },
-        { url: brand.faviconUrl || '/sim.png', sizes: 'any', type: 'image/png' },
+        { url: faviconUrl, sizes: 'any', type: 'image/png' },
       ],
       apple: '/favicon/apple-touch-icon.png',
-      shortcut: brand.faviconUrl || '/favicon/favicon.ico',
+      shortcut: faviconUrl,
     },
     appleWebApp: {
       capable: true,
@@ -128,9 +129,9 @@ export function generateStructuredData() {
   return {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'Sim',
+    name: 'Sereno Meridian',
     description:
-      'Sim is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sim platform. 60,000+ developers already use Sim to build and deploy AI agent workflows and connect them to 100+ apps. Sim is SOC2 and HIPAA compliant, ensuring enterprise-level security.',
+      'Sereno Meridian is an open-source AI agent workflow builder. Developers at trail-blazing startups to Fortune 500 companies deploy agentic workflows on the Sereno Meridian platform. 60,000+ developers already use Sereno Meridian to build and deploy AI agent workflows and connect them to 100+ apps. Sereno Meridian is SOC2 and HIPAA compliant, ensuring enterprise-level security.',
     url: getBaseUrl(),
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web Browser',
@@ -143,7 +144,7 @@ export function generateStructuredData() {
     },
     creator: {
       '@type': 'Organization',
-      name: 'Sim',
+      name: 'Sereno Meridian',
       url: 'https://sim.ai',
     },
     featureList: [

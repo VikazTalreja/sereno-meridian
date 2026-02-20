@@ -21,7 +21,7 @@ export function BackLink() {
           <ChevronLeft className='h-4 w-4' aria-hidden='true' />
         )}
       </span>
-      Back to Sim Studio
+      Back to Sereno Meridian
     </Link>
   )
 }

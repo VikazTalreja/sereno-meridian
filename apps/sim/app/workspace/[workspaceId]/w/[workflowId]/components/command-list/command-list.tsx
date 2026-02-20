@@ -186,8 +186,8 @@ export function CommandList() {
         {/* Logo */}
         <div className='mb-[20px] flex justify-center'>
           <Image
-            src='/logo/b&w/text/b&w.svg'
-            alt='Sim'
+            src='/logo/Sereno_Logo.png'
+            alt='Sereno Meridian'
             width={99.56}
             height={48.56}
             className='opacity-70'

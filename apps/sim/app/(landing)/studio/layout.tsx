@@ -4,22 +4,18 @@ export default function StudioLayout({ children }: { children: React.ReactNode }
   const orgJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Sim',
-    url: 'https://sim.ai',
-    logo: 'https://sim.ai/logo/primary/small.png',
-    sameAs: ['https://x.com/simdotai'],
+    name: 'Sereno Meridian',
+    url: '/',
+    logo: '/logo/Sereno_Logo.png',
+    sameAs: [],
   }
 
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Sim',
-    url: 'https://sim.ai',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://sim.ai/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
+    name: 'Sereno Meridian',
+    url: '/',
+    // SearchAction removed to avoid hard-coded Sim search URL
   }
 
   return (

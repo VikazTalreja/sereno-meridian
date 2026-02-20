@@ -5,13 +5,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 }
 
 export const metadata = {
-  metadataBase: new URL('https://docs.sim.ai'),
   title: {
-    default: 'Sim Documentation - Visual Workflow Builder for AI Applications',
+    default: 'Documentation - Visual Workflow Builder for AI Applications',
     template: '%s',
   },
   description:
-    'Comprehensive documentation for Sim - the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines by connecting blocks on a canvas—no coding required.',
+    'Comprehensive documentation for the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines by connecting blocks on a canvas—no coding required.',
   keywords: [
     'AI workflow builder',
     'visual workflow editor',
@@ -28,9 +27,9 @@ export const metadata = {
     'AI workflow automation',
     'visual programming',
   ],
-  authors: [{ name: 'Sim Team', url: 'https://sim.ai' }],
-  creator: 'Sim',
-  publisher: 'Sim',
+  authors: [{ name: 'Documentation Team' }],
+  creator: 'Sereno Meridian',
+  publisher: 'Sereno Meridian',
   category: 'Developer Tools',
   classification: 'Developer Documentation',
   manifest: '/favicon/site.webmanifest',
@@ -45,34 +44,32 @@ export const metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Sim Docs',
+    title: 'Documentation',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['es_ES', 'fr_FR', 'de_DE', 'ja_JP', 'zh_CN'],
-    url: 'https://docs.sim.ai',
-    siteName: 'Sim Documentation',
-    title: 'Sim Documentation - Visual Workflow Builder for AI Applications',
+    url: '/',
+    siteName: 'Documentation',
+    title: 'Documentation - Visual Workflow Builder for AI Applications',
     description:
-      'Comprehensive documentation for Sim - the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines.',
+      'Comprehensive documentation for the visual workflow builder for AI applications. Create powerful AI agents, automation workflows, and data processing pipelines.',
     images: [
       {
-        url: 'https://docs.sim.ai/api/og?title=Sim%20Documentation',
+        url: '/api/og?title=Documentation',
         width: 1200,
         height: 630,
-        alt: 'Sim Documentation',
+        alt: 'Documentation',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sim Documentation - Visual Workflow Builder for AI Applications',
+    title: 'Documentation - Visual Workflow Builder for AI Applications',
     description:
-      'Comprehensive documentation for Sim - the visual workflow builder for AI applications.',
-    creator: '@simdotai',
-    site: '@simdotai',
-    images: ['https://docs.sim.ai/api/og?title=Sim%20Documentation'],
+      'Comprehensive documentation for the visual workflow builder for AI applications.',
+    images: ['/api/og?title=Documentation'],
   },
   robots: {
     index: true,
@@ -85,16 +82,5 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: 'https://docs.sim.ai',
-    languages: {
-      'x-default': 'https://docs.sim.ai',
-      en: 'https://docs.sim.ai',
-      es: 'https://docs.sim.ai/es',
-      fr: 'https://docs.sim.ai/fr',
-      de: 'https://docs.sim.ai/de',
-      ja: 'https://docs.sim.ai/ja',
-      zh: 'https://docs.sim.ai/zh',
-    },
-  },
+  alternates: {},
 }

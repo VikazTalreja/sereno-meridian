@@ -44,7 +44,7 @@ export const SlackBlock: BlockConfig<SlackResponse> = {
       title: 'Authentication Method',
       type: 'dropdown',
       options: [
-        { label: 'Sim Bot', id: 'oauth' },
+        { label: 'Workspace Bot', id: 'oauth' },
         { label: 'Custom Bot', id: 'bot_token' },
       ],
       value: () => 'oauth',
@@ -606,7 +606,7 @@ Return ONLY the timestamp string - no explanations, no quotes, no extra text.`,
         } else {
           // Default to OAuth
           if (!credential) {
-            throw new Error('Slack account credential is required when using Sim Bot')
+            throw new Error('Slack account credential is required when using the workspace bot')
           }
           baseParams.credential = credential
         }

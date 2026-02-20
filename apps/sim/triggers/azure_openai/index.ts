@@ -1,0 +1,1 @@
+export { azureOpenAIWebhookTrigger } from './webhook'

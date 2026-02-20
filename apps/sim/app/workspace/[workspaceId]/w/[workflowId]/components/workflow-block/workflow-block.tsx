@@ -636,16 +636,16 @@ const SubBlockRow = memo(function SubBlockRow({
   const displayValue = maskedValue || hydratedName || (isSelectorType && value ? '-' : value)
 
   return (
-    <div className='flex items-center gap-[8px]'>
+    <div className='flex items-center gap-[8px] rounded-[6px] bg-[var(--surface-3)]/65 px-[8px] py-[5px]'>
       <span
-        className='min-w-0 truncate text-[14px] text-[var(--text-tertiary)] capitalize'
+        className='min-w-0 truncate text-[12px] font-medium text-[var(--text-tertiary)] capitalize'
         title={title}
       >
         {title}
       </span>
       {displayValue !== undefined && (
         <span
-          className='flex-1 truncate text-right text-[14px] text-[var(--text-primary)]'
+          className='flex-1 truncate text-right text-[12px] text-[var(--text-secondary)]'
           title={displayValue}
         >
           {displayValue}
@@ -1043,7 +1043,7 @@ export const WorkflowBlock = memo(function WorkflowBlock({
         ref={contentRef}
         onClick={handleClick}
         className={cn(
-          'workflow-drag-handle relative z-[20] w-[250px] cursor-grab select-none rounded-[8px] border border-[var(--border-1)] bg-[var(--surface-2)] [&:active]:cursor-grabbing'
+          'workflow-drag-handle relative z-[20] w-[260px] cursor-grab select-none rounded-[12px] border border-[var(--border-1)]/80 bg-gradient-to-b from-[var(--surface-1)] to-[var(--surface-2)] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_2px_14px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)] backdrop-blur-sm transition-all duration-200 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_8px_28px_rgba(0,0,0,0.14),0_2px_6px_rgba(0,0,0,0.06)] [&:active]:cursor-grabbing'
         )}
       >
         {isPending && (
@@ -1077,22 +1077,22 @@ export const WorkflowBlock = memo(function WorkflowBlock({
 
         <div
           className={cn(
-            'flex items-center justify-between p-[8px]',
-            hasContentBelowHeader && 'border-[var(--border-1)] border-b'
+            'flex items-center justify-between px-[10px] py-[9px]',
+            hasContentBelowHeader && 'border-[var(--border-1)]/65 border-b'
           )}
         >
           <div className='relative z-10 flex min-w-0 flex-1 items-center gap-[10px]'>
             <div
-              className='flex h-[24px] w-[24px] flex-shrink-0 items-center justify-center rounded-[6px]'
+              className='flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-[8px] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_1px_3px_-1px_rgba(0,0,0,0.1)]'
               style={{
                 background: isEnabled ? config.bgColor : 'gray',
               }}
             >
-              <config.icon className='h-[16px] w-[16px] text-white' />
+              <config.icon className='h-[16px] w-[16px] text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)]' />
             </div>
             <span
               className={cn(
-                'truncate font-medium text-[16px]',
+                'truncate font-semibold text-[14px] tracking-[-0.01em]',
                 !isEnabled && runPathStatus !== 'success' && 'text-[var(--text-muted)]'
               )}
               title={name}
@@ -1211,7 +1211,7 @@ export const WorkflowBlock = memo(function WorkflowBlock({
         </div>
 
         {hasContentBelowHeader && (
-          <div className='flex flex-col gap-[8px] p-[8px]'>
+          <div className='flex flex-col gap-[6px] px-[10px] py-[8px]'>
             {type === 'condition' ? (
               conditionRows.map((cond) => (
                 <SubBlockRow key={cond.id} title={cond.title} value={getDisplayValue(cond.value)} />
@@ -1405,7 +1405,7 @@ export const WorkflowBlock = memo(function WorkflowBlock({
         )}
         {hasRing && (
           <div
-            className={cn('pointer-events-none absolute inset-0 z-40 rounded-[8px]', ringStyles)}
+            className={cn('pointer-events-none absolute inset-0 z-40 rounded-[12px]', ringStyles)}
           />
         )}
       </div>

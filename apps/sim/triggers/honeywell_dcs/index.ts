@@ -1,0 +1,1 @@
+export { honeywellDCSWebhookTrigger } from './webhook'

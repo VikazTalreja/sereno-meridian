@@ -8,6 +8,14 @@ import { ApifyBlock } from '@/blocks/blocks/apify'
 import { ApolloBlock } from '@/blocks/blocks/apollo'
 import { ArxivBlock } from '@/blocks/blocks/arxiv'
 import { AsanaBlock } from '@/blocks/blocks/asana'
+import { AvevaPISystemBlock } from '@/blocks/blocks/aveva_pi_system'
+import { AzureAISearchBlock } from '@/blocks/blocks/azure_ai_search'
+import { AzureDataFactoryBlock } from '@/blocks/blocks/azure_data_factory'
+import { AzureDigitalTwinsBlock } from '@/blocks/blocks/azure_digital_twins'
+import { AzureExpressRouteBlock } from '@/blocks/blocks/azure_expressroute'
+import { AzureIoTHubBlock } from '@/blocks/blocks/azure_iot_hub'
+import { AzureKubernetesServiceBlock } from '@/blocks/blocks/azure_kubernetes_service'
+import { AzureOpenAIBlock } from '@/blocks/blocks/azure_openai'
 import { BrowserUseBlock } from '@/blocks/blocks/browser_use'
 import { CalendlyBlock } from '@/blocks/blocks/calendly'
 import { ChatTriggerBlock } from '@/blocks/blocks/chat_trigger'
@@ -47,10 +55,12 @@ import { GrafanaBlock } from '@/blocks/blocks/grafana'
 import { GrainBlock } from '@/blocks/blocks/grain'
 import { GreptileBlock } from '@/blocks/blocks/greptile'
 import { GuardrailsBlock } from '@/blocks/blocks/guardrails'
+import { HoneywellDCSBlock } from '@/blocks/blocks/honeywell_dcs'
 import { HubSpotBlock } from '@/blocks/blocks/hubspot'
 import { HuggingFaceBlock } from '@/blocks/blocks/huggingface'
 import { HumanInTheLoopBlock } from '@/blocks/blocks/human_in_the_loop'
 import { HunterBlock } from '@/blocks/blocks/hunter'
+import { IBMMaximoBlock } from '@/blocks/blocks/ibm_maximo'
 import { ImageGeneratorBlock } from '@/blocks/blocks/image_generator'
 import { ImapBlock } from '@/blocks/blocks/imap'
 import { IncidentioBlock } from '@/blocks/blocks/incidentio'
@@ -83,6 +93,8 @@ import { NoteBlock } from '@/blocks/blocks/note'
 import { NotionBlock, NotionV2Block } from '@/blocks/blocks/notion'
 import { OneDriveBlock } from '@/blocks/blocks/onedrive'
 import { OpenAIBlock } from '@/blocks/blocks/openai'
+import { OracleFinancialsCloudBlock } from '@/blocks/blocks/oracle_financials_cloud'
+import { OraclePrimaveraP6Block } from '@/blocks/blocks/oracle_primavera_p6'
 import { OutlookBlock } from '@/blocks/blocks/outlook'
 import { ParallelBlock } from '@/blocks/blocks/parallel'
 import { PerplexityBlock } from '@/blocks/blocks/perplexity'
@@ -91,8 +103,10 @@ import { PipedriveBlock } from '@/blocks/blocks/pipedrive'
 import { PolymarketBlock } from '@/blocks/blocks/polymarket'
 import { PostgreSQLBlock } from '@/blocks/blocks/postgresql'
 import { PostHogBlock } from '@/blocks/blocks/posthog'
+import { PTCWindchillBlock } from '@/blocks/blocks/ptc_windchill'
 import { PulseBlock } from '@/blocks/blocks/pulse'
 import { QdrantBlock } from '@/blocks/blocks/qdrant'
+import { QlikSenseBlock } from '@/blocks/blocks/qlik_sense'
 import { RDSBlock } from '@/blocks/blocks/rds'
 import { RedditBlock } from '@/blocks/blocks/reddit'
 import { ReductoBlock } from '@/blocks/blocks/reducto'
@@ -102,6 +116,10 @@ import { RouterBlock, RouterV2Block } from '@/blocks/blocks/router'
 import { RssBlock } from '@/blocks/blocks/rss'
 import { S3Block } from '@/blocks/blocks/s3'
 import { SalesforceBlock } from '@/blocks/blocks/salesforce'
+import { SalesforceMarketingCloudBlock } from '@/blocks/blocks/salesforce_marketing_cloud'
+import { SalesforceSalesCloudBlock } from '@/blocks/blocks/salesforce_sales_cloud'
+import { SAPAribaBlock } from '@/blocks/blocks/sap_ariba'
+import { SAPS4HANABlock } from '@/blocks/blocks/sap_s4hana'
 import { ScheduleBlock } from '@/blocks/blocks/schedule'
 import { SearchBlock } from '@/blocks/blocks/search'
 import { SendGridBlock } from '@/blocks/blocks/sendgrid'
@@ -111,6 +129,7 @@ import { ServiceNowBlock } from '@/blocks/blocks/servicenow'
 import { SftpBlock } from '@/blocks/blocks/sftp'
 import { SharepointBlock } from '@/blocks/blocks/sharepoint'
 import { ShopifyBlock } from '@/blocks/blocks/shopify'
+import { SiemensTeamcenterBlock } from '@/blocks/blocks/siemens_teamcenter'
 import { SlackBlock } from '@/blocks/blocks/slack'
 import { SmtpBlock } from '@/blocks/blocks/smtp'
 import { SpotifyBlock } from '@/blocks/blocks/spotify'
@@ -164,6 +183,14 @@ export const registry: Record<string, BlockConfig> = {
   apollo: ApolloBlock,
   arxiv: ArxivBlock,
   asana: AsanaBlock,
+  aveva_pi_system: AvevaPISystemBlock,
+  azure_ai_search: AzureAISearchBlock,
+  azure_data_factory: AzureDataFactoryBlock,
+  azure_digital_twins: AzureDigitalTwinsBlock,
+  azure_expressroute: AzureExpressRouteBlock,
+  azure_iot_hub: AzureIoTHubBlock,
+  azure_kubernetes_service: AzureKubernetesServiceBlock,
+  azure_openai: AzureOpenAIBlock,
   browser_use: BrowserUseBlock,
   calendly: CalendlyBlock,
   chat_trigger: ChatTriggerBlock,
@@ -210,10 +237,12 @@ export const registry: Record<string, BlockConfig> = {
   grain: GrainBlock,
   greptile: GreptileBlock,
   guardrails: GuardrailsBlock,
+  honeywell_dcs: HoneywellDCSBlock,
   hubspot: HubSpotBlock,
   huggingface: HuggingFaceBlock,
   human_in_the_loop: HumanInTheLoopBlock,
   hunter: HunterBlock,
+  ibm_maximo: IBMMaximoBlock,
   image_generator: ImageGeneratorBlock,
   imap: ImapBlock,
   incidentio: IncidentioBlock,
@@ -251,6 +280,8 @@ export const registry: Record<string, BlockConfig> = {
   notion_v2: NotionV2Block,
   onedrive: OneDriveBlock,
   openai: OpenAIBlock,
+  oracle_financials_cloud: OracleFinancialsCloudBlock,
+  oracle_primavera_p6: OraclePrimaveraP6Block,
   outlook: OutlookBlock,
   parallel_ai: ParallelBlock,
   perplexity: PerplexityBlock,
@@ -259,8 +290,10 @@ export const registry: Record<string, BlockConfig> = {
   polymarket: PolymarketBlock,
   postgresql: PostgreSQLBlock,
   posthog: PostHogBlock,
+  ptc_windchill: PTCWindchillBlock,
   pulse: PulseBlock,
   qdrant: QdrantBlock,
+  qlik_sense: QlikSenseBlock,
   rds: RDSBlock,
   reddit: RedditBlock,
   reducto: ReductoBlock,
@@ -271,6 +304,10 @@ export const registry: Record<string, BlockConfig> = {
   rss: RssBlock,
   s3: S3Block,
   salesforce: SalesforceBlock,
+  salesforce_marketing_cloud: SalesforceMarketingCloudBlock,
+  salesforce_sales_cloud: SalesforceSalesCloudBlock,
+  sap_ariba: SAPAribaBlock,
+  sap_s4hana: SAPS4HANABlock,
   schedule: ScheduleBlock,
   search: SearchBlock,
   sendgrid: SendGridBlock,
@@ -280,6 +317,7 @@ export const registry: Record<string, BlockConfig> = {
   sftp: SftpBlock,
   sharepoint: SharepointBlock,
   shopify: ShopifyBlock,
+  siemens_teamcenter: SiemensTeamcenterBlock,
   slack: SlackBlock,
   smtp: SmtpBlock,
   spotify: SpotifyBlock,

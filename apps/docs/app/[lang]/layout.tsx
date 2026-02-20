@@ -58,17 +58,17 @@ export default async function Layout({ children, params }: LayoutProps) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Sim Documentation',
+    name: 'Documentation',
     description:
-      'Comprehensive documentation for Sim - the visual workflow builder for AI Agent Workflows.',
-    url: 'https://docs.sim.ai',
+      'Comprehensive documentation for the visual workflow builder for AI Agent Workflows.',
+    url: '/',
     publisher: {
       '@type': 'Organization',
-      name: 'Sim',
-      url: 'https://sim.ai',
+      name: 'Sereno Meridian',
+      url: '/',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://docs.sim.ai/static/logo.png',
+        url: '/logo/Sereno_Logo.png',
       },
     },
     inLanguage: lang,
@@ -76,7 +76,7 @@ export default async function Layout({ children, params }: LayoutProps) {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://docs.sim.ai/api/search?q={search_term_string}',
+        urlTemplate: '/api/search?q={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -102,7 +102,7 @@ export default async function Layout({ children, params }: LayoutProps) {
           <DocsLayout
             tree={source.pageTree[lang]}
             nav={{
-              title: <SimLogoFull className='h-7 w-auto' />,
+              title: null,
             }}
             sidebar={{
               defaultOpenLevel: 0,

@@ -956,7 +956,7 @@ export default function PlaygroundPage() {
             <VariantRow label='json'>
               <div className='w-full max-w-lg'>
                 <Code.Viewer
-                  code={JSON.stringify({ name: 'Sim', version: '1.0' }, null, 2)}
+                  code={JSON.stringify({ name: 'Sereno Meridian', version: '1.0' }, null, 2)}
                   language='json'
                   showGutter
                 />

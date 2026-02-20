@@ -55,7 +55,7 @@ const allTestimonials: Testimonial[] = [
     profileImage: '/twitter/xyflow.jpg',
   },
   {
-    text: "One of the best products I've seen in the space, and the hustle and grind I've seen from @karabegemir and @typingwala is insane. Sim is positioned to build something game-changing, and there's no better team for the job.\n\nCongrats on the launch 🚀 🎊 great things ahead!",
+    text: "One of the best products I've seen in the space, and the hustle and grind I've seen from @karabegemir and @typingwala is insane. This platform is positioned to build something game-changing, and there's no better team for the job.\n\nCongrats on the launch 🚀 🎊 great things ahead!",
     name: 'samarth',
     username: '@firestorm776',
     viewCount: '1,256',
@@ -63,7 +63,7 @@ const allTestimonials: Testimonial[] = [
     profileImage: '/twitter/samarth.jpg',
   },
   {
-    text: 'lfgg got access to @simstudioai via @zerodotemail 😎',
+    text: 'lfgg got access to the platform via @zerodotemail 😎',
     name: 'nizzy',
     username: '@nizzyabi',
     viewCount: '1,762',
@@ -79,7 +79,7 @@ const allTestimonials: Testimonial[] = [
     profileImage: '/twitter/syamrajk.jpg',
   },
   {
-    text: 'The use cases are endless. Great work @simstudioai',
+    text: 'The use cases are endless. Great work to the team.',
     name: 'Daniel Kim',
     username: '@daniel_zkim',
     viewCount: '103',

@@ -20,7 +20,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[]; l
 
   const data = page.data as PageData
   const MDX = data.body
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = '/'
 
   const pageTreeRecord = source.pageTree as Record<string, any>
   const pageTree =
@@ -250,15 +250,15 @@ export async function generateMetadata(props: {
   if (!page) notFound()
 
   const data = page.data as PageData
-  const baseUrl = 'https://docs.sim.ai'
+  const baseUrl = '/'
   const fullUrl = `${baseUrl}${page.url}`
 
-  const ogImageUrl = `${baseUrl}/api/og?title=${encodeURIComponent(data.title)}`
+  const ogImageUrl = `/api/og?title=${encodeURIComponent(data.title)}`
 
   return {
     title: data.title,
     description:
-      data.description || 'Sim visual workflow builder for AI applications documentation',
+      data.description || 'Sereno Meridian visual workflow builder for AI applications documentation',
     keywords: [
       'AI workflow builder',
       'visual workflow editor',
@@ -271,14 +271,14 @@ export async function generateMetadata(props: {
     ]
       .flat()
       .filter(Boolean),
-    authors: [{ name: 'Sim Team' }],
+    authors: [{ name: 'Sereno Meridian Team' }],
     category: 'Developer Tools',
     openGraph: {
       title: data.title,
       description:
-        data.description || 'Sim visual workflow builder for AI applications documentation',
+        data.description || 'Sereno Meridian visual workflow builder for AI applications documentation',
       url: fullUrl,
-      siteName: 'Sim Documentation',
+      siteName: 'Sereno Meridian Documentation',
       type: 'article',
       locale: params.lang === 'en' ? 'en_US' : `${params.lang}_${params.lang.toUpperCase()}`,
       alternateLocale: ['en', 'es', 'fr', 'de', 'ja', 'zh']
@@ -297,10 +297,8 @@ export async function generateMetadata(props: {
       card: 'summary_large_image',
       title: data.title,
       description:
-        data.description || 'Sim visual workflow builder for AI applications documentation',
+        data.description || 'Sereno Meridian visual workflow builder for AI applications documentation',
       images: [ogImageUrl],
-      creator: '@simdotai',
-      site: '@simdotai',
     },
     robots: {
       index: true,

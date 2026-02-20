@@ -1,0 +1,1 @@
+export { azureDigitalTwinsWebhookTrigger } from './webhook'

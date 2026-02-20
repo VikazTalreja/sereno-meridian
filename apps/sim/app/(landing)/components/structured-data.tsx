@@ -4,28 +4,23 @@ export default function StructuredData() {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://sim.ai/#organization',
-        name: 'Sim',
-        alternateName: 'Sim',
+        '@id': '/#organization',
+        name: 'Sereno Meridian',
+        alternateName: 'Sereno Meridian',
         description:
           'Open-source AI agent workflow builder used by developers at trail-blazing startups to Fortune 500 companies',
-        url: 'https://sim.ai',
+        url: '/',
         logo: {
           '@type': 'ImageObject',
-          '@id': 'https://sim.ai/#logo',
-          url: 'https://sim.ai/logo/b&w/text/b&w.svg',
-          contentUrl: 'https://sim.ai/logo/b&w/text/b&w.svg',
+          '@id': '/#logo',
+          url: '/logo/Sereno_Logo.png',
+          contentUrl: '/logo/Sereno_Logo.png',
           width: 49.78314,
           height: 24.276,
-          caption: 'Sim Logo',
+          caption: 'Sereno Meridian Logo',
         },
-        image: { '@id': 'https://sim.ai/#logo' },
-        sameAs: [
-          'https://x.com/simdotai',
-          'https://github.com/simstudioai/sim',
-          'https://www.linkedin.com/company/simstudioai/',
-          'https://discord.gg/Hr4UWYEcTT',
-        ],
+        image: { '@id': '/#logo' },
+        sameAs: [],
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'customer support',
@@ -34,33 +29,33 @@ export default function StructuredData() {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://sim.ai/#website',
-        url: 'https://sim.ai',
-        name: 'Sim - AI Agent Workflow Builder',
+        '@id': '/#website',
+        url: '/',
+        name: 'Sereno Meridian - AI Agent Workflow Builder',
         description:
           'Open-source AI agent workflow builder. 60,000+ developers build and deploy agentic workflows. SOC2 and HIPAA compliant.',
         publisher: {
-          '@id': 'https://sim.ai/#organization',
+          '@id': '/#organization',
         },
         inLanguage: 'en-US',
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://sim.ai/#webpage',
-        url: 'https://sim.ai',
-        name: 'Sim - Workflows for LLMs | Build AI Agent Workflows',
+        '@id': '/#webpage',
+        url: '/',
+        name: 'Sereno Meridian - Workflows for LLMs | Build AI Agent Workflows',
         isPartOf: {
-          '@id': 'https://sim.ai/#website',
+          '@id': '/#website',
         },
         about: {
-          '@id': 'https://sim.ai/#software',
+          '@id': '/#software',
         },
         datePublished: '2024-01-01T00:00:00+00:00',
         dateModified: new Date().toISOString(),
         description:
-          'Build and deploy AI agent workflows with Sim. Visual drag-and-drop interface for creating powerful LLM-powered automations.',
+          'Build and deploy AI agent workflows with Sereno Meridian. Visual drag-and-drop interface for creating powerful LLM-powered automations.',
         breadcrumb: {
-          '@id': 'https://sim.ai/#breadcrumb',
+          '@id': '/#breadcrumb',
         },
         inLanguage: 'en-US',
         potentialAction: [
@@ -72,20 +67,20 @@ export default function StructuredData() {
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://sim.ai/#breadcrumb',
+        '@id': '/#breadcrumb',
         itemListElement: [
           {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://sim.ai',
+            item: '/',
           },
         ],
       },
       {
         '@type': 'SoftwareApplication',
-        '@id': 'https://sim.ai/#software',
-        name: 'Sim - AI Agent Workflow Builder',
+        '@id': '/#software',
+        name: 'Sereno Meridian - AI Agent Workflow Builder',
         description:
           'Open-source AI agent workflow builder used by 60,000+ developers. Build agentic workflows with visual drag-and-drop interface. SOC2 and HIPAA compliant. Integrate with 100+ apps.',
         applicationCategory: 'DeveloperApplication',
@@ -95,7 +90,7 @@ export default function StructuredData() {
         offers: [
           {
             '@type': 'Offer',
-            '@id': 'https://sim.ai/#offer-free',
+            '@id': '/#offer-free',
             name: 'Community Plan',
             price: '0',
             priceCurrency: 'USD',
@@ -103,7 +98,7 @@ export default function StructuredData() {
             itemCondition: 'https://schema.org/NewCondition',
             availability: 'https://schema.org/InStock',
             seller: {
-              '@id': 'https://sim.ai/#organization',
+              '@id': '/#organization',
             },
             eligibleRegion: {
               '@type': 'Place',
@@ -112,7 +107,7 @@ export default function StructuredData() {
           },
           {
             '@type': 'Offer',
-            '@id': 'https://sim.ai/#offer-pro',
+            '@id': '/#offer-pro',
             name: 'Pro Plan',
             price: '20',
             priceCurrency: 'USD',
@@ -127,12 +122,12 @@ export default function StructuredData() {
             itemCondition: 'https://schema.org/NewCondition',
             availability: 'https://schema.org/InStock',
             seller: {
-              '@id': 'https://sim.ai/#organization',
+              '@id': '/#organization',
             },
           },
           {
             '@type': 'Offer',
-            '@id': 'https://sim.ai/#offer-team',
+            '@id': '/#offer-team',
             name: 'Team Plan',
             price: '40',
             priceCurrency: 'USD',
@@ -147,7 +142,7 @@ export default function StructuredData() {
             itemCondition: 'https://schema.org/NewCondition',
             availability: 'https://schema.org/InStock',
             seller: {
-              '@id': 'https://sim.ai/#organization',
+              '@id': '/#organization',
             },
           },
         ],
@@ -173,37 +168,37 @@ export default function StructuredData() {
         screenshot: [
           {
             '@type': 'ImageObject',
-            url: 'https://sim.ai/logo/426-240/primary/small.png',
-            caption: 'Sim AI agent workflow builder interface',
+            url: '/logo/Sereno_Logo.png',
+            caption: 'Sereno Meridian AI agent workflow builder interface',
           },
         ],
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://sim.ai/#faq',
+        '@id': '/#faq',
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'What is Sim?',
+            name: 'What is Sereno Meridian?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Sim is an open-source AI agent workflow builder used by 60,000+ developers at trail-blazing startups to Fortune 500 companies. It provides a visual drag-and-drop interface for building and deploying agentic workflows. Sim is SOC2 and HIPAA compliant.',
+              text: 'Sereno Meridian is an open-source AI agent workflow builder used by 60,000+ developers at trail-blazing startups to Fortune 500 companies. It provides a visual drag-and-drop interface for building and deploying agentic workflows. Sereno Meridian is SOC2 and HIPAA compliant.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Which AI models does Sim support?',
+            name: 'Which AI models does Sereno Meridian support?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Sim supports all major AI models including OpenAI (GPT-5, GPT-4o), Anthropic (Claude), Google (Gemini), xAI (Grok), Mistral, Perplexity, and many more. You can also connect to open-source models via Ollama.',
+              text: 'Sereno Meridian supports all major AI models including OpenAI (GPT-5, GPT-4o), Anthropic (Claude), Google (Gemini), xAI (Grok), Mistral, Perplexity, and many more. You can also connect to open-source models via Ollama.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Do I need coding skills to use Sim?',
+            name: 'Do I need coding skills to use Sereno Meridian?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'No coding skills are required! Sim features a visual drag-and-drop interface that makes it easy to build AI workflows. However, developers can also use custom functions and our API for advanced use cases.',
+              text: 'No coding skills are required! Sereno Meridian features a visual drag-and-drop interface that makes it easy to build AI workflows. However, developers can also use custom functions and our API for advanced use cases.',
             },
           },
         ],

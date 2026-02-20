@@ -1,0 +1,1 @@
+export { ibmMaximoWebhookTrigger } from './webhook'

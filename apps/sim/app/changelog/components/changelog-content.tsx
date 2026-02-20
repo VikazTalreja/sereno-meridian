@@ -61,7 +61,7 @@ export default async function ChangelogContent() {
               Changelog
             </h1>
             <p className={`${inter.className} mt-4 text-muted-foreground text-sm`}>
-              Stay up-to-date with the latest features, improvements, and bug fixes in Sim. All
+              Stay up-to-date with the latest features, improvements, and bug fixes in Sereno Meridian. All
               changes are documented here with detailed release notes.
             </p>
             <hr className='mt-6 border-border' />

@@ -3,17 +3,17 @@ import { getBaseUrl } from '@/lib/core/utils/urls'
 export async function GET() {
   const baseUrl = getBaseUrl()
 
-  const llmsFullContent = `# Sim - AI Agent Workflow Builder
+  const llmsFullContent = `# Sereno Meridian - AI Agent Workflow Builder
 
-> Sim is an open-source AI agent workflow builder used by 60,000+ developers at startups to Fortune 500 companies. Build and deploy agentic workflows with a visual drag-and-drop canvas. SOC2 and HIPAA compliant.
+> Sereno Meridian is an AI agent workflow builder used by 60,000+ developers at startups to Fortune 500 companies. Build and deploy agentic workflows with a visual drag-and-drop canvas. SOC2 and HIPAA compliant.
 
 ## Overview
 
-Sim provides a visual interface for building AI agent workflows. Instead of writing code, users drag and drop blocks onto a canvas and connect them to create complex AI automations. Each block represents a step in the workflow - an LLM call, a tool invocation, an API request, or a code execution.
+Sereno Meridian provides a visual interface for building AI agent workflows. Instead of writing code, users drag and drop blocks onto a canvas and connect them to create complex AI automations. Each block represents a step in the workflow - an LLM call, a tool invocation, an API request, or a code execution.
 
 ## Product Details
 
-- **Product Name**: Sim
+- **Product Name**: Sereno Meridian
 - **Category**: AI Development Tools / Workflow Automation
 - **Deployment**: Cloud (SaaS) and Self-hosted options
 - **Pricing**: Free tier, Pro ($20/month), Team ($40/month), Enterprise (custom)
@@ -22,7 +22,7 @@ Sim provides a visual interface for building AI agent workflows. Instead of writ
 ## Core Concepts
 
 ### Workspace
-A workspace is the top-level container in Sim. It holds workflows, data sources, credentials, and execution history. Users can create multiple workspaces for different projects or teams.
+A workspace is the top-level container in Sereno Meridian. It holds workflows, data sources, credentials, and execution history. Users can create multiple workspaces for different projects or teams.
 
 ### Workflow
 A workflow is a directed graph of blocks that defines an agentic process. Workflows can be triggered manually, on a schedule, or via webhooks. Each workflow has a unique ID and can be versioned.
@@ -54,7 +54,7 @@ An execution is a single run of a workflow. It includes:
 ## Capabilities
 
 ### LLM Orchestration
-Sim supports all major LLM providers:
+Sereno Meridian supports all major LLM providers:
 - OpenAI (GPT-5.2, GPT-5.1, GPT-5, GPT-4o, GPT-4.1)
 - Anthropic (Claude Opus 4.5, Claude Opus 4.1, Claude Sonnet 4.5, Claude Haiku 4.5)
 - Google (Gemini Pro 3, Gemini Pro 3 Preview, Gemini 2.5 Pro, Gemini 2.5 Flash)
@@ -145,19 +145,19 @@ Built-in support for:
 ## Links
 
 - **Website**: ${baseUrl}
-- **Documentation**: https://docs.sim.ai
-- **API Reference**: https://docs.sim.ai/api
-- **GitHub**: https://github.com/simstudioai/sim
-- **Discord**: https://discord.gg/Hr4UWYEcTT
-- **X/Twitter**: https://x.com/simdotai
-- **LinkedIn**: https://linkedin.com/company/simstudioai
+- **Documentation**: /
+- **API Reference**: /
+- **GitHub**: #
+- **Discord**: #
+- **X/Twitter**: #
+- **LinkedIn**: #
 
 ## Support
 
-- **Email**: help@sim.ai
-- **Security Issues**: security@sim.ai
-- **Documentation**: https://docs.sim.ai
-- **Community Discord**: https://discord.gg/Hr4UWYEcTT
+- **Email**: our support team
+- **Security Issues**: our security team
+- **Documentation**: /
+- **Community Discord**: #
 
 ## Legal
 

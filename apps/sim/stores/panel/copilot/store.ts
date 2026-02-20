@@ -2881,7 +2881,7 @@ export const useCopilotStore = create<CopilotStore>()(
             | undefined
           if (result.status === 401) {
             errorContent =
-              '_Unauthorized request. You need a valid API key to use the copilot. You can get one by going to [sim.ai](https://sim.ai) settings and generating one there._'
+              '_Unauthorized request. You need a valid API key to use the copilot. You can get one by going to your account settings and generating one there._'
             errorType = 'unauthorized'
           } else if (result.status === 402) {
             errorContent =
@@ -2893,7 +2893,7 @@ export const useCopilotStore = create<CopilotStore>()(
             errorType = 'forbidden'
           } else if (result.status === 426) {
             errorContent =
-              '_Please upgrade to the latest version of the Sim platform to continue using the copilot._'
+              '_Please upgrade to the latest version of the platform to continue using the copilot._'
             errorType = 'upgrade_required'
           } else if (result.status === 429) {
             errorContent = '_Provider rate limit exceeded. Please try again later._'
