@@ -343,11 +343,32 @@ function SignupFormContent({
 
   return (
     <>
-      <div className='space-y-1 text-center'>
-        <h1 className={`${soehne.className} font-medium text-[32px] text-black tracking-tight`}>
-          Create an account
+      <div className='text-center mb-2 -mt-24'>
+        <h1
+          className={`${soehne.className} font-bold tracking-tight`}
+          style={{
+            fontSize: '54px',
+            background: 'linear-gradient(135deg, #6c47ff 0%, #a78bfa 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            lineHeight: '1.15',
+            letterSpacing: '-0.5px',
+          }}
+        >
+          Sereno Meridian
         </h1>
-        <p className={`${inter.className} font-[380] text-[16px] text-muted-foreground`}>
+        <div className='flex items-center justify-center gap-3 mt-3 mb-4'>
+          <div style={{ height: '1px', width: '48px', background: 'linear-gradient(to right, transparent, #d1d5db)' }} />
+          <p className={`${inter.className} text-[11px] font-medium tracking-[0.18em] uppercase text-gray-400`}>
+            Create account
+          </p>
+          <div style={{ height: '1px', width: '48px', background: 'linear-gradient(to left, transparent, #d1d5db)' }} />
+        </div>
+        <p className={`${soehne.className} font-medium text-[26px] text-black tracking-tight`}>
+          Create an account
+        </p>
+        <p className={`${inter.className} font-[380] text-[15px] text-muted-foreground mt-1`}>
           Create an account or log in
         </p>
       </div>
@@ -360,14 +381,14 @@ function SignupFormContent({
         const hasOnlySSO = ssoEnabled && !emailEnabled && !hasSocial
         return hasOnlySSO
       })() && (
-        <div className={`${inter.className} mt-8`}>
-          <SSOLoginButton
-            callbackURL={redirectUrl || '/workspace'}
-            variant='primary'
-            primaryClassName={buttonClass}
-          />
-        </div>
-      )}
+          <div className={`${inter.className} mt-8`}>
+            <SSOLoginButton
+              callbackURL={redirectUrl || '/workspace'}
+              variant='primary'
+              primaryClassName={buttonClass}
+            />
+          </div>
+        )}
 
       {/* Email/Password Form - show unless explicitly disabled */}
       {!isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED')) && (
@@ -390,8 +411,8 @@ function SignupFormContent({
                 className={cn(
                   'rounded-[10px] shadow-sm transition-colors focus:border-gray-400 focus:ring-2 focus:ring-gray-100',
                   showNameValidationError &&
-                    nameErrors.length > 0 &&
-                    'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
+                  nameErrors.length > 0 &&
+                  'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
                 )}
               />
               {showNameValidationError && nameErrors.length > 0 && (
@@ -418,7 +439,7 @@ function SignupFormContent({
                 className={cn(
                   'rounded-[10px] shadow-sm transition-colors focus:border-gray-400 focus:ring-2 focus:ring-gray-100',
                   (emailError || (showEmailValidationError && emailErrors.length > 0)) &&
-                    'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
+                  'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
                 )}
               />
               {showEmailValidationError && emailErrors.length > 0 && (
@@ -452,8 +473,8 @@ function SignupFormContent({
                   className={cn(
                     'rounded-[10px] pr-10 shadow-sm transition-colors focus:border-gray-400 focus:ring-2 focus:ring-gray-100',
                     showValidationError &&
-                      passwordErrors.length > 0 &&
-                      'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
+                    passwordErrors.length > 0 &&
+                    'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
                   )}
                 />
                 <button
@@ -496,15 +517,15 @@ function SignupFormContent({
         const showDivider = (emailEnabled || hasOnlySSO) && showBottomSection
         return showDivider
       })() && (
-        <div className={`${inter.className} relative my-6 font-light`}>
-          <div className='absolute inset-0 flex items-center'>
-            <div className='auth-divider w-full border-t' />
+          <div className={`${inter.className} relative my-6 font-light`}>
+            <div className='absolute inset-0 flex items-center'>
+              <div className='auth-divider w-full border-t' />
+            </div>
+            <div className='relative flex justify-center text-sm'>
+              <span className='bg-white px-4 font-[340] text-muted-foreground'>Or continue with</span>
+            </div>
           </div>
-          <div className='relative flex justify-center text-sm'>
-            <span className='bg-white px-4 font-[340] text-muted-foreground'>Or continue with</span>
-          </div>
-        </div>
-      )}
+        )}
 
       {(() => {
         const ssoEnabled = isTruthy(getEnv('NEXT_PUBLIC_SSO_ENABLED'))
@@ -514,28 +535,28 @@ function SignupFormContent({
         const showBottomSection = hasSocial || (ssoEnabled && !hasOnlySSO)
         return showBottomSection
       })() && (
-        <div
-          className={cn(
-            inter.className,
-            isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED')) ? 'mt-8' : undefined
-          )}
-        >
-          <SocialLoginButtons
-            githubAvailable={githubAvailable}
-            googleAvailable={googleAvailable}
-            callbackURL={redirectUrl || '/workspace'}
-            isProduction={isProduction}
-          >
-            {isTruthy(getEnv('NEXT_PUBLIC_SSO_ENABLED')) && (
-              <SSOLoginButton
-                callbackURL={redirectUrl || '/workspace'}
-                variant='outline'
-                primaryClassName={buttonClass}
-              />
+          <div
+            className={cn(
+              inter.className,
+              isFalsy(getEnv('NEXT_PUBLIC_EMAIL_PASSWORD_SIGNUP_ENABLED')) ? 'mt-8' : undefined
             )}
-          </SocialLoginButtons>
-        </div>
-      )}
+          >
+            <SocialLoginButtons
+              githubAvailable={githubAvailable}
+              googleAvailable={googleAvailable}
+              callbackURL={redirectUrl || '/workspace'}
+              isProduction={isProduction}
+            >
+              {isTruthy(getEnv('NEXT_PUBLIC_SSO_ENABLED')) && (
+                <SSOLoginButton
+                  callbackURL={redirectUrl || '/workspace'}
+                  variant='outline'
+                  primaryClassName={buttonClass}
+                />
+              )}
+            </SocialLoginButtons>
+          </div>
+        )}
 
       <div className={`${inter.className} pt-6 text-center font-light text-[14px]`}>
         <span className='font-normal'>Already have an account? </span>
