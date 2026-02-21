@@ -384,11 +384,32 @@ export default function LoginPage({
 
   return (
     <>
-      <div className='space-y-1 text-center'>
-        <h1 className={`${soehne.className} font-medium text-[32px] text-black tracking-tight`}>
-          Sign in
+      <div className='text-center mb-2 -mt-24'>
+        <h1
+          className={`${soehne.className} font-bold tracking-tight`}
+          style={{
+            fontSize: '54px',
+            background: 'linear-gradient(135deg, #6c47ff 0%, #a78bfa 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            lineHeight: '1.15',
+            letterSpacing: '-0.5px',
+          }}
+        >
+          Sereno Meridian
         </h1>
-        <p className={`${inter.className} font-[380] text-[16px] text-muted-foreground`}>
+        <div className='flex items-center justify-center gap-3 mt-3 mb-4'>
+          <div style={{ height: '1px', width: '48px', background: 'linear-gradient(to right, transparent, #d1d5db)' }} />
+          <p className={`${inter.className} text-[11px] font-medium tracking-[0.18em] uppercase text-gray-400`}>
+            Welcome back
+          </p>
+          <div style={{ height: '1px', width: '48px', background: 'linear-gradient(to left, transparent, #d1d5db)' }} />
+        </div>
+        <p className={`${soehne.className} font-medium text-[26px] text-black tracking-tight`}>
+          Sign in
+        </p>
+        <p className={`${inter.className} font-[380] text-[15px] text-muted-foreground mt-1`}>
           Enter your details
         </p>
       </div>
@@ -432,8 +453,8 @@ export default function LoginPage({
                 className={cn(
                   'rounded-[10px] shadow-sm transition-colors focus:border-gray-400 focus:ring-2 focus:ring-gray-100',
                   showEmailValidationError &&
-                    emailErrors.length > 0 &&
-                    'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
+                  emailErrors.length > 0 &&
+                  'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
                 )}
               />
               {showEmailValidationError && emailErrors.length > 0 && (
@@ -470,8 +491,8 @@ export default function LoginPage({
                   className={cn(
                     'rounded-[10px] pr-10 shadow-sm transition-colors focus:border-gray-400 focus:ring-2 focus:ring-gray-100',
                     showValidationError &&
-                      passwordErrors.length > 0 &&
-                      'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
+                    passwordErrors.length > 0 &&
+                    'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
                   )}
                 />
                 <button
@@ -597,7 +618,7 @@ export default function LoginPage({
                 className={cn(
                   'rounded-[10px] shadow-sm transition-colors focus:border-gray-400 focus:ring-2 focus:ring-gray-100',
                   resetStatus.type === 'error' &&
-                    'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
+                  'border-red-500 focus:border-red-500 focus:ring-red-100 focus-visible:ring-red-500'
                 )}
               />
               {resetStatus.type === 'error' && (
